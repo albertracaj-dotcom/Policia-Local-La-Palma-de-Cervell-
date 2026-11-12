@@ -19,21 +19,54 @@ h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.1;margin:8px 0}.lead{color:v
 .card{background:#10263b;border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0}.card h2{font-size:1.18rem;margin:0 0 12px;color:var(--gold)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{color:var(--muted);font-size:.85rem;font-weight:650}input,select,textarea{width:100%;background:#091b2b;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;min-width:0}textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.hidden{display:none!important}.notice{padding:13px 15px;border:1px solid #806b35;background:#3c321b66;border-radius:12px;color:#f4dda0;font-size:.88rem;margin:14px 0}.muted{color:var(--muted)}.result{padding:13px;border-radius:12px;background:#091b2b;border:1px solid var(--line);margin-top:12px}.list{display:grid;gap:10px}.entry{padding:14px;border:1px solid var(--line);border-radius:12px;background:#0c2032}.entry strong{color:var(--gold)}.tag{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:3px 9px;color:var(--muted);font-size:.75rem;margin-left:5px}
 footer{text-align:center;color:var(--muted);font-size:.78rem;padding:28px 12px;border-top:1px solid var(--line)}.section{display:none}.section.active{display:block;animation:fade .18s ease}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media(max-width:620px){header{padding:12px 15px}.grid{grid-template-columns:1fr}.tiles{gap:10px}.tile{padding:15px;min-height:140px}.card{padding:15px}}
+
+/* Pantalla inicial inspirada en la mostra VMP-LEGAL */
+#home{position:relative;isolation:isolate;min-height:calc(100svh - 112px);margin:-22px -16px -10px;padding:clamp(24px,5vh,52px) 18px 34px;overflow:hidden;text-align:center;background:linear-gradient(180deg,#1675b8 0%,#07528f 52%,#063765 100%);display:none}
+#home.active{display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+#home:before{content:"";position:absolute;inset:auto -8% 0;height:43%;z-index:-1;background:linear-gradient(180deg,#164f7b00,#063052 70%);clip-path:polygon(0 44%,12% 27%,22% 40%,35% 8%,49% 38%,61% 18%,74% 43%,87% 14%,100% 37%,100% 100%,0 100%)}
+#home:after{content:"";position:absolute;inset:auto 0 0;height:26%;z-index:-1;background:#052c4c;opacity:.72;clip-path:polygon(0 32%,15% 48%,29% 26%,43% 44%,59% 20%,74% 45%,88% 25%,100% 39%,100% 100%,0 100%)}
+#home .home-crest{width:104px;height:104px;border:3px solid #f2cf72;border-radius:28px 28px 42px 42px;display:grid;place-items:center;background:linear-gradient(145deg,#fff,#dceaf4);box-shadow:0 12px 30px #00264b66;margin:4px auto 18px;color:#124b79;font-size:1.05rem;font-weight:900;letter-spacing:.08em;position:relative}
+#home .home-crest:before{content:"✦";position:absolute;top:7px;font-size:17px;color:#b48b31}
+#home .home-crest span{margin-top:12px}
+#home .home-title{font-size:clamp(1.35rem,4vw,2rem);line-height:1.15;letter-spacing:.08em;color:#fff;font-weight:900;text-shadow:0 2px 8px #00345c;margin:0}
+#home .home-subtitle{color:#d8ecfa;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;margin:8px 0 18px}
+#home .home-scene{width:min(100%,620px);height:clamp(145px,24vh,220px);display:flex;align-items:center;justify-content:space-evenly;position:relative;margin:4px auto 22px}
+#home .home-scene:before{content:"";position:absolute;left:7%;right:7%;bottom:17px;height:3px;background:#f2cf72;border-radius:10px;opacity:.8}
+#home .vehicle-art{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;color:white;font-size:clamp(3.6rem,14vw,6.2rem);filter:drop-shadow(0 8px 4px #002b4d66)}
+#home .vehicle-art small{font-size:.72rem;font-weight:800;letter-spacing:.14em;color:#e6f4ff}
+#home .home-tiles{width:min(100%,620px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 auto 18px}
+#home .home-tile{min-height:105px;border:2px solid #f2cf72;border-radius:18px;padding:14px 10px;background:linear-gradient(145deg,#fff,#e8f2f9);color:#0b4775;text-align:center;box-shadow:0 9px 22px #002b4d55;cursor:pointer;transition:transform .18s,box-shadow .18s}
+#home .home-tile:active{transform:scale(.98)}
+#home .home-tile strong{display:block;font-size:clamp(1.05rem,4vw,1.35rem);letter-spacing:.05em}
+#home .home-tile span{display:block;font-size:.76rem;color:#426783;margin-top:4px}
+#home .home-tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:4px auto 0}
+#home .home-tools .btn{border-color:#c7e2f5;background:#073b67cc;color:#fff}
+#home .home-warning{max-width:620px;color:#d3e8f7;font-size:.72rem;margin:16px auto 0}
+@media(max-height:720px){#home{padding-top:18px}#home .home-crest{width:76px;height:76px;margin-bottom:10px}#home .home-scene{height:130px;margin-bottom:12px}#home .home-tile{min-height:88px}}
+@media(max-width:380px){#home .home-tiles{gap:8px}#home .home-tile{padding:12px 6px}}
+
 </style>
 </head>
 <body>
 <header><div class="crest" aria-hidden="true">⚖️</div><div class="brand"><strong>POLICIA LOCAL</strong><small>La Palma de Cervelló · Eines operatives</small></div><span class="tag">VMP · VTC</span></header>
 <main>
 <section id="home" class="section active">
-<div class="eyebrow">Eina de consulta i suport</div>
-<h1>VMP <span style="color:var(--gold)">·</span> VTC</h1>
-<p class="lead">Espai de treball per consultar criteris, preparar controls i registrar actuacions relacionades amb vehicles de mobilitat personal i vehicles de transport amb conductor.</p>
-<div class="tiles">
-<button class="tile" data-open="vmp"><span class="symbol">🛴</span><strong>VMP LEGAL</strong><span>Consulta i control de vehicles de mobilitat personal</span></button>
-<button class="tile" data-open="vtc"><span class="symbol">🚘</span><strong>VTC LEGAL</strong><span>Comprovacions documentals i de servei VTC</span></button>
+<div class="home-crest" aria-label="Emblema de la Policia Local"><span>POLICIA<br>LOCAL</span></div>
+<h1 class="home-title">POLICIA LOCAL</h1>
+<p class="home-subtitle">La Palma de Cervelló</p>
+<div class="home-scene" aria-label="Il·lustració de VMP i VTC">
+<div class="vehicle-art"><span aria-hidden="true">🛴</span><small>VMP</small></div>
+<div class="vehicle-art"><span aria-hidden="true">🚘</span><small>VTC</small></div>
 </div>
-<div class="card"><h2>Accés ràpid</h2><div class="actions"><button class="btn secondary" data-open="normativa">📚 Normativa i guies</button><button class="btn secondary" data-open="historial">🗂️ Historial local</button></div></div>
-<div class="notice">Eina de suport operatiu. No substitueix la consulta de la normativa consolidada, les instruccions vigents ni els registres oficials.</div>
+<div class="home-tiles">
+<button class="home-tile" data-open="vmp"><strong>VMP LEGAL</strong><span>Vehicles de mobilitat personal</span></button>
+<button class="home-tile" data-open="vtc"><strong>VTC LEGAL</strong><span>Vehicles de transport amb conductor</span></button>
+</div>
+<div class="home-tools">
+<button class="btn" data-open="normativa">📚 Normativa i guies</button>
+<button class="btn" data-open="historial">🗂️ Historial de controls</button>
+</div>
+<p class="home-warning">Eina de suport operatiu · Contrasta sempre la normativa i els registres oficials vigents</p>
 </section>
 <section id="workspace" class="section">
 <div class="eyebrow" id="modeLabel">Mòdul</div><h1 id="modeTitle">Control</h1>
