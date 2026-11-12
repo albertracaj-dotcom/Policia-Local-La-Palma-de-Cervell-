@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#00143b"/><stop offset=".55" stop-color="#063d91"/><stop offset="1" stop-color="#00102e"/></linearGradient>
+ <linearGradient id="map" x2="0" y2="1"><stop stop-color="#071b48"/><stop offset="1" stop-color="#00102d"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="512" height="512" rx="62" fill="url(#bg)"/>
+<rect x="4" y="4" width="504" height="504" rx="58" fill="none" stroke="#087bff" stroke-width="3"/>
+<path d="M116 34 145 30 164 45 194 48 211 64 244 69 258 86 287 88 309 105 339 102 362 117 390 111 414 126 439 130 454 151 446 173 458 191 448 214 451 237 433 255 429 281 405 298 393 319 365 334 349 353 318 362 300 385 272 395 248 414 220 418 203 440 174 445 157 465 129 470 110 488 91 473 72 461 69 438 53 421 59 398 48 378 57 354 49 333 62 309 57 286 75 266 71 243 91 225 89 203 106 184 101 162 119 143 110 121 127 100 115 81Z" fill="url(#map)" stroke="#ffd900" stroke-width="9" stroke-linejoin="round"/>
+<g fill="#f20d20">
+ <path d="M165 392 176 285 195 282 190 399Z"/>
+ <path d="M207 383 219 278 238 276 231 388Z"/>
+ <path d="M250 369 261 278 280 278 273 376Z"/>
+ <path d="M291 353 303 284 322 287 314 359Z"/>
+</g>
+<text x="256" y="222" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="900" font-style="italic" text-anchor="middle" letter-spacing="-2">POLICIA</text>
+<text x="256" y="280" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="900" font-style="italic" text-anchor="middle" letter-spacing="-2">LOCAL</text>
+</svg>
