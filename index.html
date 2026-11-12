@@ -162,6 +162,13 @@
       position: relative;
       z-index: 1;
     }
+    .sc-doc-intro{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px;margin-bottom:12px}
+    .sc-doc-list{display:grid;gap:10px}
+    .sc-doc-item{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px}
+    .sc-doc-icon{font-size:1.6rem}
+    .sc-doc-meta{flex:1;min-width:0}.sc-doc-meta strong{display:block;overflow-wrap:anywhere}.sc-doc-meta small{color:var(--muted)}
+    .sc-doc-open{background:#1e3a5f;color:var(--accent);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-weight:700;text-decoration:none;white-space:nowrap}
+    .sc-doc-empty{padding:18px;border:1px dashed var(--border);border-radius:12px;color:var(--muted);text-align:center}
     .panel { display: none; }
     .panel.active { display: block; animation: fadeIn 0.25s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -829,6 +836,9 @@
     <button type="button" class="tab" data-tab="guia">Guia</button>
     <button type="button" class="tab" data-tab="manual">Manual d’ús</button>
     <button type="button" class="tab" data-tab="historial">🗂️ Historial</button>
+    <button type="button" class="tab sc-only-tab" data-tab="sc-pnt" style="display:none">PNT</button>
+    <button type="button" class="tab sc-only-tab" data-tab="sc-diagrames" style="display:none">Diagrames policials</button>
+    <button type="button" class="tab sc-only-tab" data-tab="sc-normativa" style="display:none">Normativa</button>
   </nav>
 
   <main class="content">
@@ -1145,6 +1155,9 @@
       </div>
       <p class="footer-note">Aplicació informativa. La qualificació i quantia de les sancions depenen de la norma aplicable, l’àmbit territorial i les circumstàncies del fet.<br><span id="footerName">VMP LEGAL</span><br>POLICIA LOCAL · LA PALMA DE CERVELLÓ</p>
     </section>
+    <section id="sc-pnt" class="panel"><div class="sc-doc-intro"><h2>📋 Procediments normalitzats de treball (PNT)</h2><p>Documents de consulta per als agents.</p></div><div id="sc-pnt-list" class="sc-doc-list"><div class="sc-doc-empty">Carregant documents…</div></div></section>
+    <section id="sc-diagrames" class="panel"><div class="sc-doc-intro"><h2>🔀 Diagrames policials</h2><p>Esquemes i diagrames de suport a les actuacions policials.</p></div><div id="sc-diagrames-list" class="sc-doc-list"><div class="sc-doc-empty">Carregant documents…</div></div></section>
+    <section id="sc-normativa" class="panel"><div class="sc-doc-intro"><h2>⚖️ Normativa</h2><p>Disposicions legals i normativa de referència.</p></div><div id="sc-normativa-list" class="sc-doc-list"><div class="sc-doc-empty">Carregant documents…</div></div></section>
   </main>
 
   <div class="install-fixed" id="installFixed"><div class="ib-text"><strong id="installFixedTitle">Instal·la VMP LEGAL</strong><span>Afegeix-la a la pantalla d'inici</span></div><button class="ib-btn" id="installFixedBtn">Instal·lar</button><button class="ib-close" id="installFixedClose" aria-label="Tancar">×</button></div>
@@ -1555,6 +1568,30 @@
       screen.scrollTop=0;
     }
 
+
+    const scTabNames=['sc-pnt','sc-diagrames','sc-normativa'];
+    let scDocsLoaded=false;
+    async function loadSCDocuments(){
+      if(scDocsLoaded)return;
+      scDocsLoaded=true;
+      const targets={pnt:'sc-pnt-list',diagrames:'sc-diagrames-list',normativa:'sc-normativa-list'};
+      try{
+        const response=await fetch('./documents/seguretat-ciutadana.json?v=1',{cache:'no-store'});
+        if(!response.ok)throw new Error('catalog');
+        const data=await response.json();
+        Object.entries(targets).forEach(([category,id])=>{
+          const host=document.getElementById(id),docs=Array.isArray(data[category])?data[category]:[];
+          if(!docs.length){host.innerHTML='<div class="sc-doc-empty">Encara no hi ha documents incorporats en aquest apartat.</div>';return;}
+          host.innerHTML=docs.map(doc=>{
+            const esc=v=>String(v||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+            const url=String(doc.url||'');
+            if(!url.startsWith('./documents/')||!url.toLowerCase().endsWith('.pdf'))return '';
+            return '<article class="sc-doc-item"><span class="sc-doc-icon">📄</span><div class="sc-doc-meta"><strong>'+esc(doc.title||'Document PDF')+'</strong><small>'+esc(doc.description||'Document PDF')+'</small></div><a class="sc-doc-open" href="'+esc(url)+'" target="_blank" rel="noopener">Obrir PDF</a></article>';
+          }).join('')||'<div class="sc-doc-empty">No hi ha documents vàlids.</div>';
+        });
+      }catch(e){scDocsLoaded=false;Object.values(targets).forEach(id=>document.getElementById(id).innerHTML='<div class="sc-doc-empty">No s’ha pogut carregar el catàleg de documents.</div>');}
+    }
+
     let currentBranch = 'vmp';
     const homeBtn=document.getElementById('homeBtn'), openVmp=document.getElementById('openVmp'), openVtc=document.getElementById('openVtc'), openSC=document.getElementById('openSC'), openOAC=document.getElementById('openOAC');
     const appTitle=document.getElementById('appTitle'), appSubtitle=document.getElementById('appSubtitle'), footerName=document.getElementById('footerName');
@@ -1618,6 +1655,8 @@
       document.body.classList.remove('home-mode');
       if(push&&!restoringNavigation) navPush(navState('branch',branch,'consulta',null));
       const vmp=branch==='vmp', vtc=branch==='vtc', sc=branch==='sc', oac=branch==='oac';
+      document.querySelectorAll('.sc-only-tab').forEach(t=>t.style.display=sc?'block':'none');
+      document.querySelectorAll('.tab:not(.sc-only-tab)').forEach(t=>t.style.display=sc?'none':'block');
       const names={vmp:'VMP LEGAL',vtc:'VTC LEGAL',sc:'SEGURETAT CIUTADANA',oac:'OAC'};
       const subtitles={vmp:'Normativa · Denúncies · Verificador · Guia · En vigor 1/10/2026',vtc:'Normativa · Denúncies · Comprovar VTC · Guia · Catalunya / AMB',sc:'Consulta operativa · Seguretat ciutadana · Normativa',oac:'Atenció ciutadana · Tràmits · Procediment administratiu'};
       appTitle.textContent=names[branch]||names.vmp;
@@ -1639,9 +1678,10 @@
       extraManual.style.display=(sc||oac)?'block':'none';
       extraManual.innerHTML=sc?'<div class="guide-section"><h3>📘 Manual d’ús · Seguretat Ciutadana</h3><p>Utilitza Consulta per accedir a fitxes temàtiques i Nomenclàtor per cercar referències normatives. Les fitxes no substitueixen la valoració jurídica ni els protocols operatius.</p></div>':'<div class="guide-section"><h3>📘 Manual d’ús · OAC</h3><p>Utilitza Consulta per revisar els tràmits habituals i Nomenclàtor per localitzar la normativa de procediment. Verifica sempre el circuit intern i la competència municipal.</p></div>';
       document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      document.querySelector('.tab[data-tab="consulta"]').classList.add('active');
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-      document.getElementById('consulta').classList.add('active');
+      if(sc){document.querySelector('.tab[data-tab="sc-pnt"]').classList.add('active');document.getElementById('sc-pnt').classList.add('active');loadSCDocuments();}
+      else{document.querySelector('.tab[data-tab="consulta"]').classList.add('active');document.getElementById('consulta').classList.add('active');}
       listView.classList.add('active'); detailView.classList.remove('active');
       window.scrollTo(0,0);
     }
@@ -1722,7 +1762,7 @@
     normSearch.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchNormFullScreen();}});
     document.querySelector('.tabs').addEventListener('click',e=>{
       const tab=e.target.closest('.tab');
-      if(tab) activateTab(tab.dataset.tab,true);
+      if(tab){activateTab(tab.dataset.tab,true);if(scTabNames.includes(tab.dataset.tab))loadSCDocuments();}
     });
 
     let deferredPrompt=null;
