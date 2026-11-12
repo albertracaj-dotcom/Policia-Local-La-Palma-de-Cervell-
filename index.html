@@ -516,7 +516,7 @@
     body.home-mode .home-screen{display:flex;}
     body:not(.home-mode) .home-screen{display:none;}
 
-    .home-hit.security{left:6%;top:53%;width:88%;height:11%;display:flex;align-items:center;justify-content:center;border:2px solid var(--accent);border-radius:18px;background:linear-gradient(135deg,rgba(26,58,110,.97),rgba(15,39,68,.97));box-shadow:0 8px 22px rgba(0,0,0,.35);color:var(--accent);font-family:inherit;font-size:clamp(12px,3.2vw,17px);font-weight:800;letter-spacing:.5px;text-shadow:0 1px 3px #000}.home-hit.security:active{transform:scale(.985);background:#204675}.home-hit.security span{pointer-events:none}
+    .security-home-btn{display:flex;align-items:center;gap:13px;width:min(88%,620px);min-height:68px;margin:14px auto 0;padding:13px 17px;text-align:left;color:var(--text);background:linear-gradient(135deg,#1a3a6e 0%,#0f2744 100%);border:2px solid var(--accent);border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.32);cursor:pointer;font-family:inherit;font-size:23px}.security-home-btn:active{transform:scale(.985);background:#204675}.security-home-icon{font-size:26px}.security-home-btn span:nth-child(2){flex:1}.security-home-btn strong{display:block;color:var(--accent);font-size:14px;letter-spacing:.5px}.security-home-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:4px}.security-home-btn b{color:var(--accent);font-size:25px}
     .security-home-btn span{flex:1}.security-home-btn strong{display:block;color:var(--accent);font-size:14px}.security-home-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:4px}.security-home-btn b{color:var(--accent)}
     .security-screen{display:none;min-height:100dvh;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);padding:20px 14px 30px}
     body.security-mode header,body.security-mode nav.tabs,body.security-mode main.content,body.security-mode .install-fixed{display:none!important}
@@ -811,8 +811,8 @@
         <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="POLICIA LOCAL · VMP • VTC — Policia Local La Palma de Cervelló">
         <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
         <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
-        <button class="home-hit security" id="openSecurity" type="button" aria-label="Obrir Seguretat Ciutadana"><span>🛡️ SEGURETAT CIUTADANA</span></button>
       </div>
+      <button class="security-home-btn" id="openSecurity" type="button"><span class="security-home-icon">🛡️</span><span><strong>SEGURETAT CIUTADANA</strong><small>Normativa · Actuacions · Diligències</small></span><b>›</b></button>
       <p class="home-note">Selecciona VMP LEGAL, VTC LEGAL o Seguretat Ciutadana.</p>
     </div>
   </section>
