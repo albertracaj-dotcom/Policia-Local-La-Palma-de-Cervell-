@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b2742">
+<meta name="description" content="Eina de suport per a consultes i controls de VMP i VTC de la Policia Local de la Palma de Cervelló.">
+<link rel="manifest" href="./manifest.json">
+<title>Policia Local · VMP i VTC</title>
+<style>
+:root{--bg:#081827;--panel:#10263b;--panel2:#15334d;--line:#29465e;--gold:#f0c14b;--blue:#55a9ed;--text:#edf4fa;--muted:#a8bac9;--red:#ef6464;--green:#55c995}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#173b59 0,#081827 58%);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+header{padding:18px max(16px,calc((100vw - 980px)/2));display:flex;gap:14px;align-items:center;background:#0b2742ed;border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.crest{width:48px;height:48px;border:2px solid var(--gold);border-radius:14px;display:grid;place-items:center;font-size:25px;background:#173b59}.brand{flex:1}.brand strong{display:block;color:var(--gold);letter-spacing:.07em;font-size:1.02rem}.brand small{color:var(--muted)}
+main{max-width:980px;margin:auto;padding:22px 16px 50px}.eyebrow{color:var(--gold);font-size:.75rem;letter-spacing:.16em;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.1;margin:8px 0}.lead{color:var(--muted);max-width:680px;margin:10px 0 24px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:22px 0}.tile{border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(145deg,#173b59,#10263b);text-align:left;color:var(--text);cursor:pointer;min-height:150px;transition:.2s}.tile:hover,.tile.active{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 10px 28px #0003}.tile .symbol{font-size:2rem}.tile strong{display:block;font-size:1.2rem;margin:8px 0 3px}.tile span:last-child{color:var(--muted);font-size:.88rem}
+.nav{display:flex;gap:8px;overflow:auto;padding:4px 0 12px;margin-bottom:12px}.nav button,.btn{border:1px solid var(--line);border-radius:12px;padding:11px 15px;background:#122d45;color:var(--text);font:inherit;font-weight:650;cursor:pointer;white-space:nowrap}.nav button.active,.btn.primary{background:var(--gold);color:#172536;border-color:var(--gold)}.btn.secondary{background:transparent}.btn.danger{border-color:#8d4545;color:#ffaaaa}
+.card{background:#10263b;border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0}.card h2{font-size:1.18rem;margin:0 0 12px;color:var(--gold)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{color:var(--muted);font-size:.85rem;font-weight:650}input,select,textarea{width:100%;background:#091b2b;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;min-width:0}textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.hidden{display:none!important}.notice{padding:13px 15px;border:1px solid #806b35;background:#3c321b66;border-radius:12px;color:#f4dda0;font-size:.88rem;margin:14px 0}.muted{color:var(--muted)}.result{padding:13px;border-radius:12px;background:#091b2b;border:1px solid var(--line);margin-top:12px}.list{display:grid;gap:10px}.entry{padding:14px;border:1px solid var(--line);border-radius:12px;background:#0c2032}.entry strong{color:var(--gold)}.tag{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:3px 9px;color:var(--muted);font-size:.75rem;margin-left:5px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:28px 12px;border-top:1px solid var(--line)}.section{display:none}.section.active{display:block;animation:fade .18s ease}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:620px){header{padding:12px 15px}.grid{grid-template-columns:1fr}.tiles{gap:10px}.tile{padding:15px;min-height:140px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="crest" aria-hidden="true">⚖️</div><div class="brand"><strong>POLICIA LOCAL</strong><small>La Palma de Cervelló · Eines operatives</small></div><span class="tag">VMP · VTC</span></header>
+<main>
+<section id="home" class="section active">
+<div class="eyebrow">Eina de consulta i suport</div>
+<h1>VMP <span style="color:var(--gold)">·</span> VTC</h1>
+<p class="lead">Espai de treball per consultar criteris, preparar controls i registrar actuacions relacionades amb vehicles de mobilitat personal i vehicles de transport amb conductor.</p>
+<div class="tiles">
+<button class="tile" data-open="vmp"><span class="symbol">🛴</span><strong>VMP LEGAL</strong><span>Consulta i control de vehicles de mobilitat personal</span></button>
+<button class="tile" data-open="vtc"><span class="symbol">🚘</span><strong>VTC LEGAL</strong><span>Comprovacions documentals i de servei VTC</span></button>
+</div>
+<div class="card"><h2>Accés ràpid</h2><div class="actions"><button class="btn secondary" data-open="normativa">📚 Normativa i guies</button><button class="btn secondary" data-open="historial">🗂️ Historial local</button></div></div>
+<div class="notice">Eina de suport operatiu. No substitueix la consulta de la normativa consolidada, les instruccions vigents ni els registres oficials.</div>
+</section>
+<section id="workspace" class="section">
+<div class="eyebrow" id="modeLabel">Mòdul</div><h1 id="modeTitle">Control</h1>
+<nav class="nav" aria-label="Seccions"><button class="active" data-tab="consulta">Consulta</button><button data-tab="control">Nou control</button><button data-tab="manual">Guia pràctica</button><button data-tab="normativa">Normativa</button></nav>
+<div id="consulta" class="section active">
+<div class="card"><h2 id="lookupTitle">Consulta ràpida</h2><p class="muted" id="lookupIntro">Introdueix les dades disponibles per preparar la comprovació.</p>
+<div class="grid"><div class="field"><label id="lookupLabel" for="lookup">Matrícula / identificador</label><input id="lookup" placeholder="Introdueix les dades"></div><div class="field"><label>Àmbit territorial</label><select id="area"><option value="lapalma">La Palma de Cervelló</option><option value="barcelona">Barcelona</option><option value="altres">Altres municipis</option></select></div></div>
+<div class="notice" id="areaNote"></div><div class="actions"><button class="btn primary" id="lookupBtn">Preparar consulta</button><button class="btn secondary" data-tab="normativa">Veure normativa</button></div><div id="lookupResult" class="result hidden" aria-live="polite"></div></div>
+</div>
+<div id="control" class="section">
+<div class="card"><h2>Registrar un control</h2><p class="muted">Les dades s'emmagatzemen únicament en aquest dispositiu i navegador.</p>
+<form id="controlForm" class="grid">
+<div class="field"><label for="date">Data i hora</label><input id="date" type="datetime-local" required></div>
+<div class="field"><label for="agent">Agent actuant</label><input id="agent" placeholder="Identificació professional"></div>
+<div class="field"><label for="vehicle">Marca i model</label><input id="vehicle" placeholder="Marca / model"></div>
+<div class="field"><label for="plate">Matrícula o identificador</label><input id="plate" placeholder="Si escau"></div>
+<div class="field"><label for="place">Lloc del control</label><input id="place" placeholder="Via / adreça"></div>
+<div class="field"><label for="outcome">Resultat</label><select id="outcome"><option>Correcte</option><option>Deficiències detectades</option><option>Denúncia / proposta</option><option>Altres actuacions</option></select></div>
+<div class="field full"><label for="observations">Observacions</label><textarea id="observations" placeholder="Fets observats, documentació examinada..."></textarea></div>
+<div class="field full"><label for="evidence">Fotografies (només previsualització local)</label><input id="evidence" type="file" accept="image/*" multiple></div>
+<div class="field full" id="preview"></div>
+<div class="field full"><label><input id="confirmLocal" type="checkbox" required style="width:auto"> Confirmo que no introdueixo dades personals innecessàries i que aquest registre és auxiliar.</label></div>
+<div class="field full actions"><button class="btn primary" type="submit">Desar al dispositiu</button><button class="btn secondary" type="reset">Netejar formulari</button></div>
+</form></div>
+</div>
+<div id="manual" class="section"><div class="card"><h2>Guia de comprovació</h2><div id="guideContent"></div></div></div>
+<div id="normativa" class="section"><div class="card"><h2>Normativa i fonts oficials</h2><p class="muted">Consulta sempre el text consolidat i la versió vigent. Els enllaços següents són punts d'accés a fonts oficials; comprova l'aplicabilitat de cada disposició abans d'actuar.</p><div class="list" id="lawLinks"></div></div></div>
+<div class="actions"><button class="btn secondary" id="backHome">← Tornar a l'inici</button></div>
+</section>
+<section id="history" class="section"><div class="eyebrow">Registre del dispositiu</div><h1>Historial de controls</h1><div class="card"><div class="grid"><div class="field"><label for="historySearch">Cerca</label><input id="historySearch" placeholder="Matrícula, agent, lloc..."></div><div class="field"><label for="historyType">Tipus</label><select id="historyType"><option value="all">Tots els registres</option><option value="vmp">VMP</option><option value="vtc">VTC</option></select></div></div><div id="historyList" class="list" style="margin-top:14px"></div><div class="actions"><button class="btn secondary" id="exportBtn">Exportar CSV</button><button class="btn danger" id="clearBtn">Esborrar historial</button></div></div><button class="btn secondary" data-open="home">← Tornar a l'inici</button></section>
+</main>
+<footer>Policia Local de la Palma de Cervelló · Projecte independent de suport operatiu · Verifica sempre les fonts oficials</footer>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let mode='vmp';
+const STORE='plpalma-vmp-vtc-controls-v1';
+const guides={
+vmp:['Identifica el vehicle i comprova si correspon a la categoria de VMP.','Examina les característiques tècniques i els elements de seguretat exigibles.','Comprova l’edat, l’ús de casc i les condicions de circulació segons la normativa aplicable.','Documenta els fets objectius i contrasta qualsevol incidència amb la norma vigent.'],
+vtc:['Identifica el vehicle, el conductor i el tipus de servei que s’està prestant.','Comprova l’autorització i la documentació exigible mitjançant els canals oficials disponibles.','Contrasta les dades del servei i l’àmbit territorial amb la regulació aplicable.','Registra únicament fets verificats; no consideris una dada no consultada com a conforme.']
+};
+function go(id){$$('.section').forEach(x=>x.classList.remove('active'));$('#'+id).classList.add('active');window.scrollTo(0,0)}
+function openModule(m){mode=m;$('#modeLabel').textContent=m==='vmp'?'Vehicle de mobilitat personal':'Vehicle de transport amb conductor';$('#modeTitle').textContent=m==='vmp'?'VMP LEGAL':'VTC LEGAL';$('#lookupTitle').textContent=m==='vmp'?'Identificació i consulta VMP':'Comprovació de vehicle VTC';$('#lookupIntro').textContent=m==='vmp'?'Anota les dades identificatives i segueix la guia de comprovació.':'La consulta de matrícula i autoritzacions s’ha de fer als registres oficials habilitats.';$('#lookupLabel').textContent=m==='vmp'?'Identificador / característiques':'Matrícula';$('#lookup').placeholder=m==='vmp'?'Marca, model o identificador':'Ex. 0000 ABC';$('#guideContent').innerHTML='<ol>'+guides[m].map(x=>'<li style="margin:10px 0">'+x+'</li>').join('')+'</ol><p class="muted">Aquesta guia és orientativa i no és una llista exhaustiva de requisits legals.</p>';$('#lawLinks').innerHTML=(m==='vmp'?[['BOE – Reglament general de circulació','https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514'],['DGT – Vehicles de mobilitat personal','https://www.dgt.es/']]:[['Ministeri de Transports – Registre i informació de transport','https://www.transportes.gob.es/'],['BOE – Normativa de transports terrestres','https://www.boe.es/']]).map(x=>'<div class="entry"><strong>'+x[0]+'</strong><p><a href="'+x[1]+'" target="_blank" rel="noopener" style="color:var(--blue)">Obrir font oficial ↗</a></p></div>').join('');$('#areaNote').textContent=$('#area').value==='lapalma'?'La Palma de Cervelló: aplica la normativa estatal i autonòmica vigent i contrasta separadament qualsevol ordenança municipal aplicable.':'Verifica les condicions municipals específiques i la normativa territorial aplicable.';$('#date').value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);$$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab==='consulta'));$$('#workspace > .section').forEach(x=>x.classList.remove('active'));$('#consulta').classList.add('active');go('workspace')}
+$$('[data-open]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.open;if(id==='vmp'||id==='vtc')openModule(id);else if(id==='historial') {renderHistory();go('history')} else if(id==='normativa'){openModule(mode);setTab('normativa')}else go('home')}));
+function setTab(t){$$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));$$('#workspace > .section').forEach(x=>x.classList.remove('active'));$('#'+t).classList.add('active')}
+$$('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+$('#backHome').onclick=()=>go('home');
+$('#area').onchange=()=>{$('#areaNote').textContent=$('#area').value==='lapalma'?'La Palma de Cervelló: aplica la normativa estatal i autonòmica vigent i contrasta separadament qualsevol ordenança municipal aplicable.':'Verifica les condicions municipals específiques i la normativa territorial aplicable.'};
+$('#lookupBtn').onclick=()=>{const v=$('#lookup').value.trim();$('#lookupResult').classList.remove('hidden');$('#lookupResult').innerHTML=v?'<strong>Consulta preparada</strong><p>No s’ha consultat cap registre extern. Fes la verificació als canals oficials autoritzats i anota el resultat al formulari de control.</p>':'Introdueix primer una matrícula o dades identificatives.'};
+function read(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch{return []}}
+function write(x){localStorage.setItem(STORE,JSON.stringify(x))}
+$('#controlForm').addEventListener('submit',e=>{e.preventDefault();const item={id:Date.now(),type:mode,date:$('#date').value,agent:$('#agent').value,vehicle:$('#vehicle').value,plate:$('#plate').value,place:$('#place').value,outcome:$('#outcome').value,observations:$('#observations').value};const a=read();a.unshift(item);write(a);alert('Control desat en aquest dispositiu.');e.target.reset();renderHistory();setTab('consulta')});
+$('#evidence').onchange=()=>{$('#preview').innerHTML='';[...$('#evidence').files].slice(0,8).forEach(f=>{const p=document.createElement('p');p.className='muted';p.textContent='Fitxer seleccionat: '+f.name+' (no s’emmagatzema al registre)';$('#preview').append(p)})};
+function renderHistory(){const q=($('#historySearch')?.value||'').toLowerCase(),t=$('#historyType')?.value||'all';const a=read().filter(x=>(t==='all'||x.type===t)&&[x.plate,x.agent,x.place,x.vehicle].join(' ').toLowerCase().includes(q));$('#historyList').innerHTML=a.length?a.map(x=>'<article class="entry"><strong>'+x.type.toUpperCase()+' · '+(x.outcome||'')+'</strong><div class="muted">'+(x.date||'')+' · '+(x.place||'Lloc no indicat')+'</div><p>'+(x.vehicle||'Vehicle no indicat')+' · '+(x.plate||'Sense matrícula')+'</p><small class="muted">Agent: '+(x.agent||'No indicat')+' · '+(x.observations||'Sense observacions')+'</small><div class="actions"><button class="btn danger" data-delete="'+x.id+'">Eliminar</button></div></article>').join(''):'<p class="muted">No hi ha controls desats amb aquests criteris.</p>';$$('[data-delete]').forEach(b=>b.onclick=()=>{write(read().filter(x=>x.id!==Number(b.dataset.delete)));renderHistory()})}
+$('#historySearch').oninput=renderHistory;$('#historyType').onchange=renderHistory;
+$('#clearBtn').onclick=()=>{if(confirm('Vols esborrar tots els registres locals d’aquest dispositiu?')){write([]);renderHistory()}};
+$('#exportBtn').onclick=()=>{const rows=[['Tipus','Data','Agent','Vehicle','Matrícula','Lloc','Resultat','Observacions'],...read().map(x=>[x.type,x.date,x.agent,x.vehicle,x.plate,x.place,x.outcome,x.observations])];const csv=rows.map(r=>r.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(';')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));a.download='controls-policia-local.csv';a.click();URL.revokeObjectURL(a.href)};
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body></html>
