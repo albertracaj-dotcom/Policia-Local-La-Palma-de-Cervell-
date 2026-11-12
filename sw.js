@@ -1,6 +1,6 @@
-const CACHE = 'policia-vmp-vtc-v35';
+const CACHE = 'policia-vmp-vtc-v36';
 const ASSETS = [
-  './', './index.html', './manifest.json', './Interfície%20de%20la%20Policia%20Local%20de%20Cervelló.png?v=1', './policia-icon.svg', './escut-oficial.jpg',
+  './', './index.html', './manifest.json', './icon-192.png?v=1', './icon-512.png?v=1', './Interfície%20de%20la%20Policia%20Local%20de%20Cervelló.png?v=1', './policia-icon.svg', './escut-oficial.jpg',
   'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
 ];
 self.addEventListener('install', event => {
@@ -21,7 +21,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   event.respondWith((async () => {
     const requestUrl = new URL(event.request.url);
-    const isAppShell = requestUrl.origin === self.location.origin && (requestUrl.pathname.endsWith('/index.html') || requestUrl.pathname.endsWith('/home-splash.svg') || requestUrl.pathname.endsWith('/Interfície de la Policia Local de Cervelló.png') || requestUrl.pathname.endsWith('/policia-icon.svg') || requestUrl.pathname.endsWith('/escut-oficial.jpg'));
+    const isAppShell = requestUrl.origin === self.location.origin && (requestUrl.pathname.endsWith('/index.html') || requestUrl.pathname.endsWith('/home-splash.svg') || requestUrl.pathname.endsWith('/Interfície de la Policia Local de Cervelló.png') || requestUrl.pathname.endsWith('/policia-icon.svg') || requestUrl.pathname.endsWith('/escut-oficial.jpg') || requestUrl.pathname.endsWith('/icon-192.png') || requestUrl.pathname.endsWith('/icon-512.png'));
     if (!isAppShell) {
       const cached = await caches.match(event.request);
       if (cached) return cached;
