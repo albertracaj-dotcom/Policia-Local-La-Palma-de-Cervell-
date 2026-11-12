@@ -1,47 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 900">
 <defs>
- <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#112d53"/><stop offset="1" stop-color="#06162d"/></linearGradient>
- <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#ffe16b"/><stop offset="1" stop-color="#d99b00"/></linearGradient>
- <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".35"/></filter>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06152f"/><stop offset=".55" stop-color="#08264c"/><stop offset="1" stop-color="#03152f"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe45b"/><stop offset=".55" stop-color="#f4bd18"/><stop offset="1" stop-color="#d58c00"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity=".55"/></filter>
+ <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09264a"/><stop offset="1" stop-color="#03162f"/></linearGradient>
 </defs>
 <rect width="600" height="900" fill="url(#bg)"/>
-<path d="M0 0h320L250 98H0z" fill="url(#gold)"/><path d="M150 0h75l-67 98h-75z" fill="#102b50"/>
-<text x="300" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="800" text-anchor="middle">POLICIA LOCAL</text>
-<rect x="60" y="148" width="480" height="4" rx="2" fill="url(#gold)"/>
-<text x="300" y="195" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
-<!-- Escut oficial original aportat per l'usuari, en mida reduïda -->
-<image href="./escut-oficial.jpg" x="225" y="245" width="150" height="150" preserveAspectRatio="xMidYMid meet"/>
-<!-- Targetes -->
-<g fill="#0a2343" stroke="url(#gold)" stroke-width="5" filter="url(#shadow)">
- <rect x="24" y="520" width="264" height="150" rx="22"/><rect x="312" y="520" width="264" height="150" rx="22"/>
- <rect x="24" y="700" width="264" height="150" rx="22"/><rect x="312" y="700" width="264" height="150" rx="22"/>
+<!-- Franges diagonals corporatives -->
+<g fill="url(#gold)"><path d="M28 0h48L0 78V30z"/><path d="M80 0h45L33 92H0l50-92z"/><path d="M160 0h48l-48 80h-48z"/><path d="M230 0h48l-48 80h-48z"/></g>
+<text x="300" y="126" fill="#fff" font-family="Arial,sans-serif" font-size="57" font-weight="800" text-anchor="middle" letter-spacing="1">POLICIA LOCAL</text>
+<rect x="72" y="141" width="456" height="4" rx="2" fill="url(#gold)"/>
+<text x="300" y="190" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="800" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
+<!-- Escut oficial original -->
+<image xlink:href="./escut-oficial.jpg" href="./escut-oficial.jpg" x="170" y="215" width="260" height="260" preserveAspectRatio="xMidYMid meet" filter="url(#shadow)"/>
+<!-- Targetes d'accés -->
+<g fill="url(#card)" stroke="url(#gold)" stroke-width="5" filter="url(#shadow)">
+ <rect x="29" y="485" width="266" height="153" rx="23"/><rect x="305" y="485" width="266" height="153" rx="23"/>
+ <rect x="29" y="655" width="266" height="160" rx="23"/><rect x="305" y="655" width="266" height="160" rx="23"/>
 </g>
-<!-- Icona VMP: patinet elèctric -->
+<!-- VMP patinet -->
 <g fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
- <circle cx="105" cy="590" r="13"/><circle cx="205" cy="590" r="13"/><path d="M105 590h100l-19-61m-1 0h22m-8 61-8-26"/>
-</g><path d="M118 580h70" stroke="#fff0a6" stroke-width="3" stroke-linecap="round"/>
-<!-- Icona VTC: vehicle frontal -->
+ <circle cx="125" cy="568" r="12"/><circle cx="207" cy="568" r="12"/><path d="M125 568h82l-23-66m-2 0h20m-7 66-8-26"/>
+</g>
+<!-- VTC vehicle -->
 <g stroke="url(#gold)" stroke-width="7" stroke-linejoin="round">
- <path d="M360 580l18-39h130l18 39v28H360z" fill="#173d68"/>
- <path d="M389 541l13-22h82l13 22" fill="none"/>
- <path d="M379 580h128l-12-25h-104z" fill="#d7e8f7" stroke-width="4"/>
- <rect x="369" y="590" width="20" height="12" rx="4" fill="#ffe16b"/><rect x="497" y="590" width="20" height="12" rx="4" fill="#ffe16b"/>
+ <path d="M356 562l17-36h132l18 36v27H356z" fill="#0c315b"/><path d="M382 526l13-20h89l14 20" fill="none"/><path d="M373 562h133l-13-24H386z" fill="#d9e9f8" stroke-width="4"/>
+ <rect x="365" y="573" width="20" height="11" rx="4" fill="#ffe16b"/><rect x="495" y="573" width="20" height="11" rx="4" fill="#ffe16b"/>
 </g>
-<!-- Icona seguretat ciutadana: agents i escut -->
-<g stroke="url(#gold)" stroke-width="6" fill="#173d68" stroke-linejoin="round">
- <circle cx="156" cy="741" r="18"/><circle cx="92" cy="758" r="15"/><circle cx="220" cy="758" r="15"/>
- <path d="M119 790v-12a37 37 0 0 1 74 0v12zM65 797v-9a27 27 0 0 1 54 0v9M193 797v-9a27 27 0 0 1 54 0v9"/>
- <path d="M139 721l5-15h25l5 15-7 9h-21z" fill="url(#gold)"/>
- <path d="M156 764l15 7v14l-15 12-15-12v-14z" fill="url(#gold)" stroke="#fff0a6" stroke-width="2"/>
+<!-- Seguretat ciutadana: agents -->
+<g stroke="url(#gold)" stroke-width="6" fill="#12365d" stroke-linejoin="round">
+ <circle cx="162" cy="700" r="17"/><circle cx="100" cy="720" r="15"/><circle cx="224" cy="720" r="15"/>
+ <path d="M124 755v-12a38 38 0 0 1 76 0v12zM73 760v-9a27 27 0 0 1 54 0v9M197 760v-9a27 27 0 0 1 54 0v9"/>
+ <path d="M143 681l5-14h28l5 14-8 9h-22z" fill="url(#gold)"/>
+ <path d="M162 722l15 7v14l-15 12-15-12v-14z" fill="url(#gold)" stroke="#fff0a6" stroke-width="2"/>
 </g>
-<!-- Icona OAC: edifici institucional -->
+<!-- OAC edifici -->
 <g stroke="url(#gold)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
- <path d="M354 755l102-49 102 49z" fill="#173d68"/><path d="M370 755h172M378 812h156"/>
- <path d="M389 758v52m44-52v52m45-52v52m44-52v52"/>
- <circle cx="456" cy="737" r="6" fill="#ffe16b" stroke="none"/>
+ <path d="M355 714l101-52 101 52z" fill="#12365d"/><path d="M371 714h170M379 776h154"/><path d="M391 717v55m43-55v55m45-55v55m43-55v55"/><circle cx="456" cy="696" r="6" fill="#ffe16b" stroke="none"/>
 </g>
-<g fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800" text-anchor="middle">
- <text x="156" y="644">VMP LEGAL</text><text x="444" y="644">VTC LEGAL</text>
- <text x="156" y="823" font-size="25">SEGURETAT</text><text x="156" y="846" font-size="21">CIUTADANA</text><text x="456" y="823" font-size="36">OAC</text>
+<g fill="#fff" font-family="Arial,sans-serif" font-weight="800" text-anchor="middle">
+ <text x="162" y="615" font-size="30">VMP LEGAL</text><text x="438" y="615" font-size="30">VTC LEGAL</text>
+ <text x="162" y="785" font-size="26">SEGURETAT</text><text x="162" y="808" font-size="25">CIUTADANA</text><text x="456" y="790" font-size="40">OAC</text>
 </g>
+<!-- Franges inferiors -->
+<path d="M0 870h480l-30 30H0z" fill="#06152f"/><path d="M485 900l55-90h35l-55 90zM535 900l55-90h10v38l-32 52z" fill="url(#gold)"/><path d="M0 895l470 0-5 5H0z" fill="#e5ad12" opacity=".8"/>
 </svg>
