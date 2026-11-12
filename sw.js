@@ -1,6 +1,6 @@
-const CACHE = 'policia-vmp-vtc-v24';
+const CACHE = 'policia-vmp-vtc-v25';
 const ASSETS = [
-  './', './index.html', './manifest.json', './home-splash.svg?v=24', './policia-icon.svg', './escut-oficial.jpg',
+  './', './index.html', './manifest.json', './home-splash.svg?v=25', './policia-icon.svg', './escut-oficial.jpg',
   'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
 ];
 self.addEventListener('install', event => {
