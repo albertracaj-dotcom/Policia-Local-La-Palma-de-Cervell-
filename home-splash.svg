@@ -1,23 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="t d">
-<title id="t">Policia Local · La Palma de Cervelló</title><desc id="d">Pantalla inicial amb l'escut de la Policia Local i quatre mòduls: VMP Legal, VTC Legal, Seguretat Ciutadana i OAC.</desc>
-<defs><linearGradient id="bg" x2="0.9" y2="1"><stop stop-color="#102c55"/><stop offset="1" stop-color="#06152f"/></linearGradient><linearGradient id="gold" x2="1" y2="1"><stop stop-color="#ffdb55"/><stop offset="1" stop-color="#d99b00"/></linearGradient></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#102b50"/><stop offset="1" stop-color="#06172e"/></linearGradient><linearGradient id="gold" x2="1" y2="1"><stop stop-color="#ffdf62"/><stop offset="1" stop-color="#d99a00"/></linearGradient></defs>
 <rect width="600" height="900" fill="url(#bg)"/>
-<g fill="url(#gold)"><path d="M0 0h150L85 95H0zM175 0h90l-65 95h-90zM290 0h90l-65 95h-90zM600 805h-145l65-95h80zM485 900h-90l65-95h90zM370 900h-90l65-95h90z"/></g>
-<text x="300" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="55" font-weight="800" text-anchor="middle" letter-spacing="1">POLICIA LOCAL</text>
-<rect x="65" y="148" width="470" height="4" rx="2" fill="url(#gold)"/>
-<text x="300" y="198" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
-<image href="./policia-icon.svg" x="190" y="220" width="220" height="278" preserveAspectRatio="xMidYMid meet"/>
-<g fill="none" stroke="url(#gold)" stroke-width="5">
-<rect x="28" y="525" width="260" height="145" rx="22"/><rect x="312" y="525" width="260" height="145" rx="22"/>
-<rect x="28" y="690" width="260" height="145" rx="22"/><rect x="312" y="690" width="260" height="145" rx="22"/>
+<path d="M0 0h330L260 105H0z" fill="url(#gold)"/><path d="M155 0h75l-72 105h-75z" fill="#102b50"/>
+<text x="300" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="800" text-anchor="middle">POLICIA LOCAL</text>
+<rect x="60" y="148" width="480" height="4" rx="2" fill="url(#gold)"/>
+<text x="300" y="195" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
+<!-- escut vectorial integrat a la portada -->
+<g transform="translate(300 350)">
+<path d="M0-112 29-88 64-83 102-45 107-10 130 0 107 35 102 72 64 110 29 115 0 140-29 115-64 110-102 72-107 35-130 0-107-10-102-45-64-83-29-88Z" fill="url(#gold)" stroke="#050505" stroke-width="4"/>
+<circle r="92" fill="#080808"/><circle r="72" fill="#e9b313"/>
+<text x="0" y="-45" fill="#e9b313" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">POLICIA LOCAL</text>
+<path d="M-42-27h84l-8 10h-68zM-35-14h70v8h-70zM-26-2h52v7h-52z" fill="#080808"/>
+<path d="M-18-27v-13h7v13m9 0v-18h7v18m9 0v-14h7v14" stroke="#080808" stroke-width="3" fill="none"/>
+<path d="M0 20 48 68 0 116-48 68Z" fill="#e9b313" stroke="#080808" stroke-width="3"/>
+<path d="M0 103V43m0 37-15-20m15 8 15-22m-15 47-17-12m17-2 18-16" stroke="#24813c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="0" y="137" fill="#e9b313" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
 </g>
-<g fill="#fff" font-family="Arial,sans-serif" font-weight="800" text-anchor="middle">
-<text x="158" y="610" font-size="34">VMP LEGAL</text><text x="442" y="610" font-size="34">VTC LEGAL</text>
-<text x="158" y="758" font-size="27">SEGURETAT</text><text x="158" y="795" font-size="27">CIUTADANA</text><text x="442" y="775" font-size="42">OAC</text>
+<!-- quatre targetes equilibrades -->
+<g fill="#0a2343" stroke="url(#gold)" stroke-width="5">
+<rect x="24" y="510" width="264" height="155" rx="22"/><rect x="312" y="510" width="264" height="155" rx="22"/>
+<rect x="24" y="690" width="264" height="155" rx="22"/><rect x="312" y="690" width="264" height="155" rx="22"/>
 </g>
-<g fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-<path d="M95 578h80m-60 0-10-42m70 42a10 10 0 1 1-20 0 10 10 0 0 1 20 0m-68 0a10 10 0 1 1-20 0 10 10 0 0 1 20 0"/>
-<path d="M395 568h95l-10-24h-75zM405 568v-9h15v9m45-9h15v9m-78 9v14m78-14v14"/>
-<path d="M130 720v-10a20 20 0 0 1 40 0v10m-68 24v-8a17 17 0 0 1 34 0v8m50 0v-8a17 17 0 0 1 34 0v8m-85-44h30l-5 14h-20z"/>
-<path d="M390 750h105m-95 0v-55h85v55m-75-55 32-25 33 25m-60 55v-35m20 35v-35m20 35v-35"/>
-</g></svg>
+<g fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<!-- patinet -->
+<path d="M100 585h90m-65 0-12-58m80 58a11 11 0 1 1-22 0 11 11 0 0 1 22 0m-72 0a11 11 0 1 1-22 0 11 11 0 0 1 22 0"/>
+<!-- taxi -->
+<path d="M375 580h140l-14-37h-112zM390 543l9-18h91l10 18m-108 37v-12m108 12v-12"/>
+<!-- policia -->
+<path d="M130 748v-12a24 24 0 0 1 48 0v12m-82 20v-9a20 20 0 0 1 40 0v9m82 0v-9a20 20 0 0 0-40 0v9"/>
+<path d="M140 716l5-17h35l5 17-8 13h-29zM145 699h35"/>
+<!-- edifici -->
+<path d="M375 731h140l-70-45zM387 731v67m36-67v67m36-67v67m36-67v67M375 798h140"/>
+</g>
+<g fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800" text-anchor="middle">
+<text x="156" y="635">VMP LEGAL</text><text x="444" y="635">VTC LEGAL</text>
+<text x="156" y="817" font-size="25">SEGURETAT</text><text x="156" y="840" font-size="21">CIUTADANA</text><text x="444" y="817" font-size="35">OAC</text>
+</g>
+</svg>
