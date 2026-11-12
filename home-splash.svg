@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#112d53"/><stop offset="1" stop-color="#06162d"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#ffe16b"/><stop offset="1" stop-color="#d99b00"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<rect width="600" height="900" fill="url(#bg)"/>
+<path d="M0 0h320L250 98H0z" fill="url(#gold)"/><path d="M150 0h75l-67 98h-75z" fill="#102b50"/>
+<text x="300" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="800" text-anchor="middle">POLICIA LOCAL</text>
+<rect x="60" y="148" width="480" height="4" rx="2" fill="url(#gold)"/>
+<text x="300" y="195" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
+<!-- Escut policial central, amb corona i espiga -->
+<g transform="translate(300 350)" filter="url(#shadow)">
+ <path d="M0-126 32-101 72-96 113-53 119-13 143 0 119 40 113 81 72 122 32 127 0 154-32 127-72 122-113 81-119 40-143 0-119-13-113-53-72-96-32-101Z" fill="url(#gold)" stroke="#050505" stroke-width="5"/>
+ <circle r="101" fill="#050505"/><circle r="78" fill="#edb91b"/>
+ <path d="M-45-35h90l-9 12h-72zM-39-19h78v9h-78zM-29-5h58v8h-58z" fill="#050505"/>
+ <path d="M-25-35v-15h8v15m9 0v-20h8v20m9 0v-17h8v17m9 0v-13h8v13" fill="none" stroke="#050505" stroke-width="4"/>
+ <text x="0" y="-62" fill="#f3c52c" font-family="Arial,sans-serif" font-size="21" font-weight="bold" text-anchor="middle">POLICIA LOCAL</text>
+ <path d="M0 23 53 76 0 129-53 76Z" fill="#f1c32a" stroke="#050505" stroke-width="4"/>
+ <path d="M0 116V48m0 51-19-27m19 10 18-28m-18 62-22-14m22-3 22-18m-22 48-13-10m13-8 16-12" fill="none" stroke="#23823e" stroke-width="4" stroke-linecap="round"/>
+ <text x="0" y="150" fill="#f3c52c" font-family="Arial,sans-serif" font-size="13" font-weight="bold" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
+</g>
+<!-- Targetes -->
+<g fill="#0a2343" stroke="url(#gold)" stroke-width="5" filter="url(#shadow)">
+ <rect x="24" y="520" width="264" height="150" rx="22"/><rect x="312" y="520" width="264" height="150" rx="22"/>
+ <rect x="24" y="700" width="264" height="150" rx="22"/><rect x="312" y="700" width="264" height="150" rx="22"/>
+</g>
+<!-- Icona VMP: patinet elèctric -->
+<g fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="105" cy="590" r="13"/><circle cx="205" cy="590" r="13"/><path d="M105 590h100l-19-61m-1 0h22m-8 61-8-26"/>
+</g><path d="M118 580h70" stroke="#fff0a6" stroke-width="3" stroke-linecap="round"/>
+<!-- Icona VTC: vehicle frontal -->
+<g stroke="url(#gold)" stroke-width="7" stroke-linejoin="round">
+ <path d="M360 580l18-39h130l18 39v28H360z" fill="#173d68"/>
+ <path d="M389 541l13-22h82l13 22" fill="none"/>
+ <path d="M379 580h128l-12-25h-104z" fill="#d7e8f7" stroke-width="4"/>
+ <rect x="369" y="590" width="20" height="12" rx="4" fill="#ffe16b"/><rect x="497" y="590" width="20" height="12" rx="4" fill="#ffe16b"/>
+</g>
+<!-- Icona seguretat ciutadana: agents i escut -->
+<g stroke="url(#gold)" stroke-width="6" fill="#173d68" stroke-linejoin="round">
+ <circle cx="156" cy="741" r="18"/><circle cx="92" cy="758" r="15"/><circle cx="220" cy="758" r="15"/>
+ <path d="M119 790v-12a37 37 0 0 1 74 0v12zM65 797v-9a27 27 0 0 1 54 0v9M193 797v-9a27 27 0 0 1 54 0v9"/>
+ <path d="M139 721l5-15h25l5 15-7 9h-21z" fill="url(#gold)"/>
+ <path d="M156 764l15 7v14l-15 12-15-12v-14z" fill="url(#gold)" stroke="#fff0a6" stroke-width="2"/>
+</g>
+<!-- Icona OAC: edifici institucional -->
+<g stroke="url(#gold)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M354 755l102-49 102 49z" fill="#173d68"/><path d="M370 755h172M378 812h156"/>
+ <path d="M389 758v52m44-52v52m45-52v52m44-52v52"/>
+ <circle cx="456" cy="737" r="6" fill="#ffe16b" stroke="none"/>
+</g>
+<g fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800" text-anchor="middle">
+ <text x="156" y="644">VMP LEGAL</text><text x="444" y="644">VTC LEGAL</text>
+ <text x="156" y="823" font-size="25">SEGURETAT</text><text x="156" y="846" font-size="21">CIUTADANA</text><text x="456" y="823" font-size="36">OAC</text>
+</g>
+</svg>
