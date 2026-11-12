@@ -510,6 +510,12 @@
     .home-hit.vtc{right:6%;top:48.2%;width:41%;height:12.5%;}
     .home-hit.sc{left:6%;top:63%;width:41%;height:12.5%;}
     .home-hit.oac{right:6%;top:63%;width:41%;height:12.5%;}
+    /* Accessos nous visibles, integrats al selector original */
+    .home-new-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 4px;background:linear-gradient(145deg,rgba(9,35,61,.97),rgba(16,57,88,.97));border:2px solid #e8bd50;border-radius:13px;color:#fff;box-shadow:0 5px 14px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.12);text-align:center;line-height:1.05;}
+    .home-new-card:active{transform:scale(.97);background:linear-gradient(145deg,#173f63,#0b2945);}
+    .home-card-icon{font-size:clamp(15px,4vw,25px);line-height:1.1;}
+    .home-card-title{font-size:clamp(10px,2.8vw,16px);font-weight:900;letter-spacing:.7px;color:#f5cf68;text-shadow:0 1px 2px #06182a;}
+    .home-card-subtitle{font-size:clamp(7px,1.8vw,10px);font-weight:800;letter-spacing:.35px;color:#fff;}
     .home-note{margin-top:10px;font-size:11px;color:rgba(232,238,247,.72);}
     .home-screen .install-fixed{display:none;}
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
@@ -796,8 +802,8 @@
         <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local · VMP i VTC — Policia Local de la Palma de Cervelló">
         <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
         <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
-        <button class="home-hit sc" id="openSC" type="button" aria-label="Obrir Seguretat Ciutadana"></button>
-        <button class="home-hit oac" id="openOAC" type="button" aria-label="Obrir OAC"></button>
+        <button class="home-hit sc home-new-card" id="openSC" type="button" aria-label="Obrir Seguretat Ciutadana"><span class="home-card-icon" aria-hidden="true">🛡️</span><span class="home-card-title">SEGURETAT</span><span class="home-card-subtitle">CIUTADANA</span></button>
+        <button class="home-hit oac home-new-card" id="openOAC" type="button" aria-label="Obrir Oficina d’Atenció a la Ciutadania"><span class="home-card-icon" aria-hidden="true">🏛️</span><span class="home-card-title">OAC</span><span class="home-card-subtitle">ATENCIÓ CIUTADANA</span></button>
       </div>
       <p class="home-note">Selecciona el mòdul que vols consultar.</p>
     </div>
