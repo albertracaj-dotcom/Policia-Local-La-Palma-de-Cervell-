@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#1a3a6e"/><stop offset="1" stop-color="#07182c"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="url(#b)"/><path d="M256 55 415 110v125c0 103-67 174-159 222C164 409 97 338 97 235V110z" fill="#f0c14b"/><path d="M256 79 390 126v108c0 85-52 145-134 190-82-45-134-105-134-190V126z" fill="#102b4a"/><path d="M173 210h166v25H173zm0 48h166v25H173z" fill="#f0c14b"/><text x="256" y="348" font-family="Arial,sans-serif" font-size="54" font-weight="700" text-anchor="middle" fill="#fff">PL</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 392" role="img" aria-labelledby="title desc">
+<title id="title">Escut de la Policia Local de la Palma de Cervelló</title><desc id="desc">Escut daurat de la Policia Local de la Palma de Cervelló, amb corona i espiga central.</desc>
+<rect width="310" height="392" fill="#fff"/>
+<path d="M155 2 185 27 222 32 268 78 273 117 307 196 273 275 268 314 222 360 185 365 155 390 125 365 88 360 42 314 37 275 3 196 37 117 42 78 88 32 125 27Z" fill="#e9b313" stroke="#090909" stroke-width="3"/>
+<g fill="none" stroke="#111" stroke-width="2"><path d="M155 2v62M185 27l-12 49M222 32l-21 52M268 78l-44 31M273 117l-55 22M307 196h-64M273 275l-55-22M268 314l-44-31M222 360l-21-52M185 365l-12-49M155 390v-62M125 365l12-49M88 360l21-52M42 314l44-31M37 275l55-22M3 196h64M37 117l55 22M42 78l44 31M88 32l21 52M125 27l12 49"/></g>
+<circle cx="155" cy="196" r="112" fill="#080808" stroke="#111" stroke-width="3"/>
+<circle cx="155" cy="196" r="88" fill="#e9b313"/>
+<text fill="#e9b313" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="1"><textPath href="#topArc" startOffset="50%" text-anchor="middle">Policia Local</textPath></text>
+<text fill="#e9b313" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing=".5"><textPath href="#bottomArc" startOffset="50%" text-anchor="middle">La Palma de Cervelló</textPath></text>
+<defs><path id="topArc" d="M65 170 A94 94 0 0 1 245 170"/><path id="bottomArc" d="M62 218 A96 96 0 0 0 248 218"/></defs>
+<path d="M116 119h78l-8 11h-62zM121 133h68l-4 10h-60zM127 146h56v8h-56z" fill="#080808" stroke="#080808" stroke-width="2"/>
+<path d="M132 119v-8h7v8m9 0v-12h7v12m9 0v-9h7v9m9 0v-7h7v7" fill="none" stroke="#080808" stroke-width="3"/>
+<path d="M155 168 207 220 155 272 103 220Z" fill="#e9b313" stroke="#080808" stroke-width="3"/>
+<path d="M155 257c-3-25-1-48 2-70m-2 53-14-23m14 12 12-26m-12 44-18-11m18 1 18-15m-18 35-10-8m10-2 13-9" fill="none" stroke="#25823b" stroke-width="3" stroke-linecap="round"/>
+<path d="M155 257c1-31 4-50 8-72" fill="none" stroke="#25823b" stroke-width="2"/>
+</svg>
