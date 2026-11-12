@@ -516,7 +516,7 @@
     body.home-mode .home-screen{display:flex;}
     body:not(.home-mode) .home-screen{display:none;}
 
-    .security-home-btn{display:flex;align-items:center;gap:13px;width:calc(100% - 24px);margin:14px auto 0;padding:15px 17px;text-align:left;color:var(--text);background:linear-gradient(135deg,#173b68,#102943);border:1px solid rgba(240,193,75,.55);border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.25);cursor:pointer;font-family:inherit;font-size:24px}
+    .security-home-btn{display:flex;align-items:center;justify-content:center;gap:13px;width:88%;min-height:66px;margin:14px auto 0;padding:13px 17px;text-align:left;color:var(--text);background:linear-gradient(135deg,#1a3a6e 0%,#0f2744 100%);border:2px solid var(--accent);border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.32);cursor:pointer;font-family:inherit;font-size:24px;transition:transform .15s,background .2s}.security-home-btn:active{transform:scale(.985);background:#204675}
     .security-home-btn span{flex:1}.security-home-btn strong{display:block;color:var(--accent);font-size:14px}.security-home-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:4px}.security-home-btn b{color:var(--accent)}
     .security-screen{display:none;min-height:100dvh;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);padding:20px 14px 30px}
     body.security-mode header,body.security-mode nav.tabs,body.security-mode main.content,body.security-mode .install-fixed{display:none!important}
@@ -831,10 +831,6 @@
       </div>
       <article class="security-detail" id="securityDetail" hidden><button id="securityBack" class="security-back" type="button">← Tots els apartats</button><h2 id="securityTitle"></h2><div id="securityText"></div></article>
       <p class="security-disclaimer">Material de suport. Cal contrastar la normativa consolidada vigent i els protocols del cos abans de cada actuació.</p>
-    </div>
-  </section>
-      </div>
-      <p class="home-note">Selecciona VMP LEGAL o VTC LEGAL. Toca el botó corresponent.</p>
     </div>
   </section>
 
