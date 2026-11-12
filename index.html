@@ -502,14 +502,14 @@
     .install-card .install-help.show{display:block;}
     .home-screen{min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;padding:0 0 26px;box-sizing:border-box;overflow-y:auto;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);}
     .home-wrap{width:min(760px,100%);text-align:center;position:relative;}
-    .home-art{position:relative;width:100%;aspect-ratio:1.65;border-radius:24px;overflow:hidden;box-shadow:0 16px 42px rgba(0,0,0,.30);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
+    .home-art{position:relative;width:100%;aspect-ratio:0.794;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.38);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
     .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
-    .module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px 16px 0;}
-    .module-access{min-height:76px;border:1px solid rgba(240,193,75,.55);border-radius:16px;background:linear-gradient(145deg,#123d60,#09243d);color:#f5d47b;font-size:clamp(13px,3.3vw,16px);font-weight:800;letter-spacing:.35px;padding:12px 9px;box-shadow:0 8px 20px rgba(0,0,0,.24);cursor:pointer;}
+    .module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px 14px 0;}
+    .module-access{min-height:66px;border:1px solid rgba(240,193,75,.68);border-radius:13px;background:linear-gradient(180deg,#173d5d 0%,#0a2742 100%);color:#f0c14b;font-family:inherit;font-size:clamp(12px,3.1vw,15px);font-weight:900;letter-spacing:.2px;padding:10px 7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 7px 18px rgba(0,0,0,.28);cursor:pointer;text-shadow:0 1px 2px rgba(0,0,0,.45);}
     .module-access:active{transform:scale(.985);background:#17496f;}
     .module-access:focus-visible{outline:3px solid #fff;outline-offset:3px;}
-    .home-note{margin-top:12px;font-size:11px;color:rgba(232,238,247,.62);}
-    @media(max-width:420px){.module-grid{gap:9px;padding-left:10px;padding-right:10px}.module-access{min-height:70px;font-size:12px;}}
+    .home-note{margin-top:10px;font-size:11px;color:rgba(232,238,247,.72);}
+    @media(max-width:420px){.module-grid{gap:8px;padding-left:10px;padding-right:10px}.module-access{min-height:62px;font-size:12px;}}
     .home-screen .install-fixed{display:none;}
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
     body.home-mode .home-screen{display:flex;}
@@ -795,10 +795,10 @@
         <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local de la Palma de Cervelló">
       </div>
       <div class="module-grid" aria-label="Mòduls de l'aplicació">
-        <button class="module-access" id="openVmp" type="button">VMP LEGAL</button>
-        <button class="module-access" id="openVtc" type="button">VTC LEGAL</button>
-        <button class="module-access" id="openSC" type="button">SEGURETAT CIUTADANA</button>
-        <button class="module-access" id="openOAC" type="button">OAC</button>
+        <button class="module-access" id="openVmp" type="button">🛴 VMP LEGAL</button>
+        <button class="module-access" id="openVtc" type="button">🚕 VTC LEGAL</button>
+        <button class="module-access" id="openSC" type="button">🚓 SEGURETAT CIUTADANA</button>
+        <button class="module-access" id="openOAC" type="button">🏛️ OAC</button>
       </div>
       <p class="home-note">Selecciona el mòdul que vols consultar.</p>
     </div>
