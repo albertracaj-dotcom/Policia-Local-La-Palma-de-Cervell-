@@ -1626,8 +1626,8 @@
       installFixedTitle.textContent='Instal·la '+(names[branch]||names.vmp);
       renderChips(); renderNorm('');
       guideVmp.style.display=vmp?'block':'none'; guideVtc.style.display=vtc?'block':'none';
-      checkerTab.style.display=vmp?'block':'none';
-      vtcVerifierTab.style.display=vtc?'block':'none';
+      if(checkerTab) checkerTab.style.display=vmp?'block':'none';
+      if(vtcVerifierTab) vtcVerifierTab.style.display=vtc?'block':'none';
       manualVmp.style.display=vmp?'block':'none'; manualVtc.style.display=vtc?'block':'none';
       let extraGuide=document.getElementById('guideExtra');
       if(!extraGuide){extraGuide=document.createElement('div');extraGuide.id='guideExtra';document.getElementById('guia').appendChild(extraGuide);}
