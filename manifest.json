@@ -1,12 +1,32 @@
 {
   "name": "Policia Local de la Palma de Cervelló",
   "short_name": "Policia Local",
-  "id": "./index.html",
-  "start_url": "./index.html",
+  "id": "./",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0a1628",
   "theme_color": "#0b2742",
   "description": "Eina de consulta de la Policia Local de la Palma de Cervelló.",
-  "icons": [{"src":"./escut-oficial.jpg","sizes":"420x420","type":"image/jpeg","purpose":"any"}]
+  "icons": [
+    {
+      "src": "./escut-oficial.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "./escut-oficial.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "./escut-oficial.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ]
 }
