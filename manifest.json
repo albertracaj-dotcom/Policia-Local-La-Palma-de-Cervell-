@@ -8,5 +8,5 @@
   "background_color": "#0a1628",
   "theme_color": "#0b2742",
   "description": "Eina de consulta de la Policia Local de la Palma de Cervelló.",
-  "icons": [{"src":"https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/icon-192.png","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "icons": [{"src":"./policia-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
