@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Policia Local">
   <link rel="manifest" href="./manifest.json">
-  <link rel="preload" as="image" href="./home-splash.svg?v=23" fetchpriority="high">
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high">
   <link rel="icon" href="./policia-icon.svg">
   <link rel="apple-touch-icon" href="./policia-icon.svg">
   <title>Policia Local · La Palma de Cervelló</title>
@@ -501,22 +501,22 @@
     .install-card .install-help{display:none;text-align:left;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);border-radius:12px;padding:10px 12px;margin:12px 0 0;color:#c5d9f0;font-size:.76rem;line-height:1.45;}
     .install-card .install-help.show{display:block;}
     .home-screen{min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;padding:0 0 26px;box-sizing:border-box;overflow-y:auto;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);}
-    .home-wrap{width:100%;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;}
-    .home-art{position:relative;width:min(100%,520px,calc((100dvh - 18px) * 2 / 3));aspect-ratio:2 / 3;flex:0 0 auto;border-radius:22px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.34);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
-    .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;}
+    .home-wrap{width:min(760px,100%);text-align:center;position:relative;}
+    .home-art{position:relative;width:100%;aspect-ratio:0.794;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.38);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
+    .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
     .home-hit{position:absolute;border:0;background:transparent;cursor:pointer;z-index:3;border-radius:28px;}
     .home-hit:focus-visible{outline:3px solid #fff;outline-offset:3px;}
-    .home-hit.vmp{left:4%;top:56.7%;width:44%;height:17.2%;}
-    .home-hit.vtc{right:4%;top:56.7%;width:44%;height:17.2%;}
-    .home-hit.sc{left:4%;top:76.7%;width:44%;height:17.2%;}
-    .home-hit.oac{right:4%;top:76.7%;width:44%;height:17.2%;}
+    .home-hit.vmp{left:6%;top:48.2%;width:41%;height:12.5%;}
+    .home-hit.vtc{right:6%;top:48.2%;width:41%;height:12.5%;}
+    .home-hit.sc{left:6%;top:63%;width:41%;height:12.5%;}
+    .home-hit.oac{right:6%;top:63%;width:41%;height:12.5%;}
     /* Accessos nous visibles, integrats al selector original */
     .home-new-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:5px 4px;background:linear-gradient(145deg,rgba(9,35,61,.97),rgba(16,57,88,.97));border:2px solid #e8bd50;border-radius:13px;color:#fff;box-shadow:0 5px 14px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.12);text-align:center;line-height:1.05;}
     .home-new-card:active{transform:scale(.97);background:linear-gradient(145deg,#173f63,#0b2945);}
     .home-card-icon{font-size:clamp(15px,4vw,25px);line-height:1.1;}
     .home-card-title{font-size:clamp(10px,2.8vw,16px);font-weight:900;letter-spacing:.7px;color:#f5cf68;text-shadow:0 1px 2px #06182a;}
     .home-card-subtitle{font-size:clamp(7px,1.8vw,10px);font-weight:800;letter-spacing:.35px;color:#fff;}
-    .home-note{margin:8px 0 0;font-size:11px;color:rgba(232,238,247,.72);}
+    .home-note{margin-top:10px;font-size:11px;color:rgba(232,238,247,.72);}
     .home-screen .install-fixed{display:none;}
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
     body.home-mode .home-screen{display:flex;}
@@ -531,9 +531,9 @@
     .vtc-official-link:active,.vtc-official-link:focus{color:#ffe27a!important;}
     .warning-note{background:#fff7e8;border:1px solid #f0d7a2;border-radius:14px;padding:12px 14px;color:#715b2a;font-size:13px;line-height:1.45;margin-bottom:14px;}
     @media (max-width:640px){
-      .home-screen{padding:8px 0 12px;}
+      .home-screen{padding:0 0 12px;}
       .home-wrap{width:100%;}
-      .home-art{width:min(100%,calc((100dvh - 30px) * 2 / 3));border-radius:16px;}
+      .home-art{border-radius:0;border-left:0;border-right:0;}
       .home-note{padding:0 12px;}
     }
 
@@ -799,11 +799,11 @@
   <section class="home-screen" id="homeScreen">
     <div class="home-wrap">
       <div class="home-art">
-        <img src="./home-splash.svg?v=23" fetchpriority="high" decoding="async" alt="Policia Local de la Palma de Cervelló — quatre mòduls de servei">
+        <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local · VMP i VTC — Policia Local de la Palma de Cervelló">
         <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
         <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
-        <button class="home-hit sc" id="openSC" type="button" aria-label="Obrir Seguretat Ciutadana"></button>
-        <button class="home-hit oac" id="openOAC" type="button" aria-label="Obrir Oficina d’Atenció a la Ciutadania"></button>
+        <button class="home-hit sc home-new-card" id="openSC" type="button" aria-label="Obrir Seguretat Ciutadana"><span class="home-card-icon" aria-hidden="true">🛡️</span><span class="home-card-title">SEGURETAT</span><span class="home-card-subtitle">CIUTADANA</span></button>
+        <button class="home-hit oac home-new-card" id="openOAC" type="button" aria-label="Obrir Oficina d’Atenció a la Ciutadania"><span class="home-card-icon" aria-hidden="true">🏛️</span><span class="home-card-title">OAC</span><span class="home-card-subtitle">ATENCIÓ CIUTADANA</span></button>
       </div>
       <p class="home-note">Selecciona el mòdul que vols consultar.</p>
     </div>
@@ -815,7 +815,7 @@
       <img src="policia-icon.svg" alt="Escut de la Policia Local de la Palma de Cervelló">
     </div>
     <div class="title">
-      <h1 id="appTitle">POLICIA LOCAL · LA PALMA DE CERVELLÓ</h1>
+      <h1 id="appTitle">VMP LEGAL</h1>
       <p id="appSubtitle">Normativa · Denúncies · Guia · En vigor 1/10/2026</p>
     </div>
   </header>
