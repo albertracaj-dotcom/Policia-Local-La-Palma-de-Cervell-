@@ -1,0 +1,11 @@
+{
+  "name": "Policia Local La Palma · VMP i VTC",
+  "short_name": "VMP · VTC",
+  "lang": "ca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#081827",
+  "theme_color": "#0b2742",
+  "description": "Eina de suport per a controls VMP i VTC."
+}
