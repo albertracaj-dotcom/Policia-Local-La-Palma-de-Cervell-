@@ -44,39 +44,4 @@
  <text x="156" y="644">VMP LEGAL</text><text x="444" y="644">VTC LEGAL</text>
  <text x="156" y="823" font-size="25">SEGURETAT</text><text x="156" y="846" font-size="21">CIUTADANA</text><text x="456" y="823" font-size="36">OAC</text>
 </g>
-</svg<!-- Escut oficial original de la Policia Local de la Palma de Cervelló -->
-<image href="./escut-oficial.jpg" x="225" y="250" width="150" height="150" preserveAspectRatio="xMidYMid meet"/>
-<!-- Targetes -->
-<g fill="#0a2343" stroke="url(#gold)" stroke-width="5" filter="url(#shadow)">
- <rect x="24" y="520" width="264" height="150" rx="22"/><rect x="312" y="520" width="264" height="150" rx="22"/>
- <rect x="24" y="700" width="264" height="150" rx="22"/><rect x="312" y="700" width="264" height="150" rx="22"/>
-</g>
-<!-- Icona VMP: patinet elèctric -->
-<g fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
- <circle cx="105" cy="590" r="13"/><circle cx="205" cy="590" r="13"/><path d="M105 590h100l-19-61m-1 0h22m-8 61-8-26"/>
-</g><path d="M118 580h70" stroke="#fff0a6" stroke-width="3" stroke-linecap="round"/>
-<!-- Icona VTC: vehicle frontal -->
-<g stroke="url(#gold)" stroke-width="7" stroke-linejoin="round">
- <path d="M360 580l18-39h130l18 39v28H360z" fill="#173d68"/>
- <path d="M389 541l13-22h82l13 22" fill="none"/>
- <path d="M379 580h128l-12-25h-104z" fill="#d7e8f7" stroke-width="4"/>
- <rect x="369" y="590" width="20" height="12" rx="4" fill="#ffe16b"/><rect x="497" y="590" width="20" height="12" rx="4" fill="#ffe16b"/>
-</g>
-<!-- Icona seguretat ciutadana: agents i escut -->
-<g stroke="url(#gold)" stroke-width="6" fill="#173d68" stroke-linejoin="round">
- <circle cx="156" cy="741" r="18"/><circle cx="92" cy="758" r="15"/><circle cx="220" cy="758" r="15"/>
- <path d="M119 790v-12a37 37 0 0 1 74 0v12zM65 797v-9a27 27 0 0 1 54 0v9M193 797v-9a27 27 0 0 1 54 0v9"/>
- <path d="M139 721l5-15h25l5 15-7 9h-21z" fill="url(#gold)"/>
- <path d="M156 764l15 7v14l-15 12-15-12v-14z" fill="url(#gold)" stroke="#fff0a6" stroke-width="2"/>
-</g>
-<!-- Icona OAC: edifici institucional -->
-<g stroke="url(#gold)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
- <path d="M354 755l102-49 102 49z" fill="#173d68"/><path d="M370 755h172M378 812h156"/>
- <path d="M389 758v52m44-52v52m45-52v52m44-52v52"/>
- <circle cx="456" cy="737" r="6" fill="#ffe16b" stroke="none"/>
-</g>
-<g fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="800" text-anchor="middle">
- <text x="156" y="644">VMP LEGAL</text><text x="444" y="644">VTC LEGAL</text>
- <text x="156" y="823" font-size="25">SEGURETAT</text><text x="156" y="846" font-size="21">CIUTADANA</text><text x="456" y="823" font-size="36">OAC</text>
-</g>
 </svg>
