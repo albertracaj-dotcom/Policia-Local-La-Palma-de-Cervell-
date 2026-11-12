@@ -1,4 +1,4 @@
-const CACHE = 'policia-vmp-vtc-v34';
+const CACHE = 'policia-vmp-vtc-v35';
 const ASSETS = [
   './', './index.html', './manifest.json', './Interfície%20de%20la%20Policia%20Local%20de%20Cervelló.png?v=1', './policia-icon.svg', './escut-oficial.jpg',
   'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
