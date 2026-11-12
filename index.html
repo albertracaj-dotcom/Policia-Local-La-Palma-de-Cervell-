@@ -504,6 +504,10 @@
     .home-wrap{width:min(760px,100%);text-align:center;position:relative;}
     .home-art{position:relative;width:100%;aspect-ratio:0.794;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.38);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
     .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
+    .home-hit{position:absolute;border:0;background:transparent;cursor:pointer;z-index:3;border-radius:28px;}
+    .home-hit:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+    .home-hit.vmp{left:6%;top:48.2%;width:41%;height:12.5%;}
+    .home-hit.vtc{right:6%;top:48.2%;width:41%;height:12.5%;}
     .module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px 14px 0;}
     .module-access{min-height:66px;border:1px solid rgba(240,193,75,.68);border-radius:13px;background:linear-gradient(180deg,#173d5d 0%,#0a2742 100%);color:#f0c14b;font-family:inherit;font-size:clamp(12px,3.1vw,15px);font-weight:900;letter-spacing:.2px;padding:10px 7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 7px 18px rgba(0,0,0,.28);cursor:pointer;text-shadow:0 1px 2px rgba(0,0,0,.45);}
     .module-access:active{transform:scale(.985);background:#17496f;}
@@ -792,15 +796,15 @@
   <section class="home-screen" id="homeScreen">
     <div class="home-wrap">
       <div class="home-art">
-        <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local de la Palma de Cervelló">
+        <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local · VMP i VTC — Policia Local de la Palma de Cervelló">
+        <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
+        <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
       </div>
-      <div class="module-grid" aria-label="Mòduls de l'aplicació">
-        <button class="module-access" id="openVmp" type="button">🛴 VMP LEGAL</button>
-        <button class="module-access" id="openVtc" type="button">🚕 VTC LEGAL</button>
+      <div class="module-grid" aria-label="Nous mòduls">
         <button class="module-access" id="openSC" type="button">🚓 SEGURETAT CIUTADANA</button>
         <button class="module-access" id="openOAC" type="button">🏛️ OAC</button>
       </div>
-      <p class="home-note">Selecciona el mòdul que vols consultar.</p>
+      <p class="home-note">Selecciona Seguretat Ciutadana o OAC per accedir als nous mòduls.</p>
     </div>
   </section>
 
