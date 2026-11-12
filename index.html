@@ -502,15 +502,14 @@
     .install-card .install-help.show{display:block;}
     .home-screen{min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;padding:0 0 26px;box-sizing:border-box;overflow-y:auto;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);}
     .home-wrap{width:min(760px,100%);text-align:center;position:relative;}
-    .home-art{position:relative;width:100%;aspect-ratio:0.794;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.38);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
+    .home-art{position:relative;width:100%;aspect-ratio:1.65;border-radius:24px;overflow:hidden;box-shadow:0 16px 42px rgba(0,0,0,.30);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
     .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
-    .home-hit{position:absolute;border:0;background:transparent;cursor:pointer;z-index:3;border-radius:28px;}
-    .home-hit:focus-visible{outline:3px solid #fff;outline-offset:3px;}
-    .home-hit.vmp{left:6%;top:48.2%;width:41%;height:12.5%;}
-    .home-hit.vtc{right:6%;top:48.2%;width:41%;height:12.5%;}
-    .home-hit.home{display:none;}
-    .home-hint{position:absolute;left:12px;right:12px;bottom:4px;color:rgba(255,255,255,.65);font-size:10px;pointer-events:none;z-index:2;}
-    .home-note{margin-top:10px;font-size:11px;color:rgba(232,238,247,.62);}
+    .module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px 16px 0;}
+    .module-access{min-height:76px;border:1px solid rgba(240,193,75,.55);border-radius:16px;background:linear-gradient(145deg,#123d60,#09243d);color:#f5d47b;font-size:clamp(13px,3.3vw,16px);font-weight:800;letter-spacing:.35px;padding:12px 9px;box-shadow:0 8px 20px rgba(0,0,0,.24);cursor:pointer;}
+    .module-access:active{transform:scale(.985);background:#17496f;}
+    .module-access:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+    .home-note{margin-top:12px;font-size:11px;color:rgba(232,238,247,.62);}
+    @media(max-width:420px){.module-grid{gap:9px;padding-left:10px;padding-right:10px}.module-access{min-height:70px;font-size:12px;}}
     .home-screen .install-fixed{display:none;}
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
     body.home-mode .home-screen{display:flex;}
@@ -793,11 +792,15 @@
   <section class="home-screen" id="homeScreen">
     <div class="home-wrap">
       <div class="home-art">
-        <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="POLICIA LOCAL · VMP • VTC — Policia Local La Palma de Cervelló">
-        <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
-        <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
+        <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="Policia Local de la Palma de Cervelló">
       </div>
-      <p class="home-note">Selecciona VMP LEGAL o VTC LEGAL. Toca el botó corresponent.</p>
+      <div class="module-grid" aria-label="Mòduls de l'aplicació">
+        <button class="module-access" id="openVmp" type="button">VMP LEGAL</button>
+        <button class="module-access" id="openVtc" type="button">VTC LEGAL</button>
+        <button class="module-access" id="openSC" type="button">SEGURETAT CIUTADANA</button>
+        <button class="module-access" id="openOAC" type="button">OAC</button>
+      </div>
+      <p class="home-note">Selecciona el mòdul que vols consultar.</p>
     </div>
   </section>
 
@@ -1547,7 +1550,7 @@
     }
 
     let currentBranch = 'vmp';
-    const homeBtn=document.getElementById('homeBtn'), openVmp=document.getElementById('openVmp'), openVtc=document.getElementById('openVtc');
+    const homeBtn=document.getElementById('homeBtn'), openVmp=document.getElementById('openVmp'), openVtc=document.getElementById('openVtc'), openSC=document.getElementById('openSC'), openOAC=document.getElementById('openOAC');
     const appTitle=document.getElementById('appTitle'), appSubtitle=document.getElementById('appSubtitle'), footerName=document.getElementById('footerName');
     const guideVmp=document.getElementById('guideVmp'), guideVtc=document.getElementById('guideVtc');
     const manualVmp=document.getElementById('manualVmp'), manualVtc=document.getElementById('manualVtc');
@@ -1557,7 +1560,41 @@
     const normSearch=document.getElementById('normSearch'), normList=document.getElementById('normList'), normSearchBtn=document.getElementById('normSearchBtn');
     const chipsEl=document.getElementById('chips'), listView=document.getElementById('consultaList'), detailView=document.getElementById('consultaDetail'), detailCard=document.getElementById('detailCard'), backBtn=document.getElementById('backBtn');
 
-    function branchData(){ return currentBranch==='vmp' ? {infra:VMP_INFRACCIONS,nom:VMP_NOMENCLATOR} : {infra:VTC_INFRACCIONS,nom:VTC_NOMENCLATOR}; }
+    const SC_INFRACCIONS=[
+      {id:'identificacio',label:'Identificació policial',tipus:'grave',import:'—',article:'LO 4/2015 · arts. 16 i 17',titol:'Identificació de persones',desc:'La identificació a la via pública requereix els supòsits i les garanties previstos a la Llei orgànica 4/2015. Cal informar de les raons i respectar els límits legals.',nota:'Comprovar sempre el supòsit habilitant, la necessitat i la proporcionalitat.'},
+      {id:'desobediencia',label:'Desobediència',tipus:'grave',import:'Segons qualificació',article:'Codi penal · art. 556 / LO 4/2015',titol:'Desobediència o resistència',desc:'Distingir entre desobediència penal, resistència i infracció administrativa. Cal descriure l’ordre concreta, la seva legitimitat, la comprensió i la conducta observada.',nota:'No qualificar automàticament: valorar intensitat, context i requisits del tipus.'},
+      {id:'armes',label:'Armes i objectes',tipus:'grave',import:'Segons normativa aplicable',article:'Reglament d’armes · LO 4/2015',titol:'Tinença o exhibició d’armes',desc:'Comprovar la naturalesa de l’objecte, la categoria, l’autorització i les circumstàncies de port o exhibició.',nota:'Adoptar mesures de seguretat i documentar les circumstàncies objectives.'},
+      {id:'drogues',label:'Drogues en espais públics',tipus:'grave',import:'Segons normativa aplicable',article:'LO 4/2015 · art. 36.16',titol:'Consum o tinença il·lícits en llocs públics',desc:'La conducta administrativa prevista a la norma inclou el consum o la tinença il·lícits de drogues tòxiques, estupefaents o substàncies psicotròpiques en llocs, vies, establiments públics o transports col·lectius.',nota:'Descriure lloc, circumstàncies, substància i actuacions; seguir el protocol de custòdia.'},
+      {id:'ordre',label:'Alteració de l’ordre',tipus:'grave',import:'Segons normativa aplicable',article:'LO 4/2015 · art. 36',titol:'Conductes que alteren la seguretat ciutadana',desc:'Valorar si els fets encaixen en algun dels tipus administratius de la Llei orgànica 4/2015 o en una altra norma específica.',nota:'La descripció factual és essencial; evitar expressions genèriques.'},
+      {id:'danys',label:'Danys i desperfectes',tipus:'grave',import:'Segons valoració',article:'Codi penal · arts. 263 i següents / normativa administrativa',titol:'Danys a béns',desc:'Identificar el bé afectat, titularitat, entitat del perjudici, autoria indiciària i possibles elements de prova.',nota:'Documentar fotografies, testimonis i valoració dels danys quan sigui possible.'}
+    ];
+    const SC_NOMENCLATOR=[
+      {titol:'Identificació',text:'LO 4/2015, especialment articles 16 i 17: supòsits, finalitat i garanties de la identificació.',tag:'LO 4/2015'},
+      {titol:'Seguretat ciutadana',text:'Llei orgànica 4/2015, de protecció de la seguretat ciutadana. Consultar el text consolidat i la jurisprudència aplicable.',tag:'LO 4/2015'},
+      {titol:'Dret penal',text:'Llei orgànica 10/1995, del Codi penal: delictes contra les persones, patrimoni, ordre públic i administració pública.',tag:'LO 10/1995'},
+      {titol:'Policia judicial',text:'LO 2/1986, de forces i cossos de seguretat, i LECrim: funcions de policia judicial i diligències.',tag:'LO 2/1986 · LECrim'},
+      {titol:'Menors',text:'LO 5/2000, reguladora de la responsabilitat penal dels menors, i normativa de protecció de la infància.',tag:'LO 5/2000'}
+    ];
+    const OAC_INFRACCIONS=[
+      {id:'identificacio',label:'Identificació de la persona',tipus:'grave',import:'Tràmit administratiu',article:'Llei 39/2015 · art. 9',titol:'Verificació de la identitat',desc:'Comprovar la identitat de la persona interessada pels mitjans admesos legalment i incorporar només les dades necessàries per al tràmit.',nota:'Aplicar minimització de dades i les garanties de protecció de dades.'},
+      {id:'instancia',label:'Instància i registre',tipus:'grave',import:'Tràmit administratiu',article:'Llei 39/2015 · arts. 16 i 66',titol:'Presentació d’instàncies',desc:'Les sol·licituds han d’identificar la persona interessada, els fets, la petició, la data, la signatura i l’òrgan destinatari, quan correspongui.',nota:'Lliurar rebut acreditatiu de la presentació i data.'},
+      {id:'queixes',label:'Queixes i suggeriments',tipus:'grave',import:'Atenció ciutadana',article:'Normativa municipal i Llei 39/2015',titol:'Recepció de queixes i suggeriments',desc:'Registrar el contingut, les dades de contacte necessàries i derivar-lo a la unitat competent segons el circuit municipal.',nota:'Una queixa no substitueix necessàriament un recurs o una sol·licitud formal.'},
+      {id:'objectes',label:'Objectes perduts',tipus:'grave',import:'Gestió de custòdia',article:'Codi civil · arts. 615 i 616',titol:'Recepció d’objectes perduts',desc:'Registrar data, lloc de troballa, descripció, persona lliuradora i cadena de custòdia interna. Evitar exposar dades personals.',nota:'Seguir el protocol municipal de dipòsit, publicitat i lliurament.'},
+      {id:'atestats',label:'Còpies i informació',tipus:'grave',import:'Segons accés i legitimació',article:'Llei 39/2015 · LO 3/2018',titol:'Sol·licitud de còpies o informació',desc:'Comprovar la condició de persona interessada, la legitimació i els límits derivats de la investigació, la protecció de dades i els drets de tercers.',nota:'No facilitar dades ni còpies d’actuacions sense autorització o base jurídica.'}
+    ];
+    const OAC_NOMENCLATOR=[
+      {titol:'Procediment administratiu',text:'Llei 39/2015, del procediment administratiu comú de les administracions públiques.',tag:'Llei 39/2015'},
+      {titol:'Règim jurídic',text:'Llei 40/2015, de règim jurídic del sector públic.',tag:'Llei 40/2015'},
+      {titol:'Protecció de dades',text:'Reglament (UE) 2016/679 i Llei orgànica 3/2018. Aplicar minimització, confidencialitat i control d’accés.',tag:'RGPD · LO 3/2018'},
+      {titol:'Registre electrònic',text:'Llei 39/2015, especialment articles 14 i 16, sobre relació electrònica i registres.',tag:'Llei 39/2015'},
+      {titol:'Transparència',text:'Llei 19/2014, de transparència, accés a la informació pública i bon govern de Catalunya.',tag:'Llei 19/2014'}
+    ];
+    function branchData(){
+      if(currentBranch==='vmp') return {infra:VMP_INFRACCIONS,nom:VMP_NOMENCLATOR};
+      if(currentBranch==='vtc') return {infra:VTC_INFRACCIONS,nom:VTC_NOMENCLATOR};
+      if(currentBranch==='sc') return {infra:SC_INFRACCIONS,nom:SC_NOMENCLATOR};
+      return {infra:OAC_INFRACCIONS,nom:OAC_NOMENCLATOR};
+    }
     const NAV_VERSION=2;
     let restoringNavigation=false;
     function navState(screen='home',branch=null,tab='consulta',detail=null){
@@ -1574,17 +1611,27 @@
       currentBranch=branch;
       document.body.classList.remove('home-mode');
       if(push&&!restoringNavigation) navPush(navState('branch',branch,'consulta',null));
-      const vmp=branch==='vmp';
-      appTitle.textContent=vmp?'VMP LEGAL':'VTC LEGAL';
-      appSubtitle.textContent=vmp?'Normativa · Denúncies · Verificador · Guia · En vigor 1/10/2026':'Normativa · Denúncies · Comprovar VTC · Guia · Catalunya / AMB';
-      footerName.textContent=vmp?'VMP LEGAL':'VTC LEGAL';
-      installBannerTitle.textContent='Instal·la '+(vmp?'VMP LEGAL':'VTC LEGAL');
-      installFixedTitle.textContent='Instal·la '+(vmp?'VMP LEGAL':'VTC LEGAL');
+      const vmp=branch==='vmp', vtc=branch==='vtc', sc=branch==='sc', oac=branch==='oac';
+      const names={vmp:'VMP LEGAL',vtc:'VTC LEGAL',sc:'SEGURETAT CIUTADANA',oac:'OAC'};
+      const subtitles={vmp:'Normativa · Denúncies · Verificador · Guia · En vigor 1/10/2026',vtc:'Normativa · Denúncies · Comprovar VTC · Guia · Catalunya / AMB',sc:'Consulta operativa · Seguretat ciutadana · Normativa',oac:'Atenció ciutadana · Tràmits · Procediment administratiu'};
+      appTitle.textContent=names[branch]||names.vmp;
+      appSubtitle.textContent=subtitles[branch]||subtitles.vmp;
+      footerName.textContent=names[branch]||names.vmp;
+      installBannerTitle.textContent='Instal·la '+(names[branch]||names.vmp);
+      installFixedTitle.textContent='Instal·la '+(names[branch]||names.vmp);
       renderChips(); renderNorm('');
-      guideVmp.style.display=vmp?'block':'none'; guideVtc.style.display=vmp?'none':'block';
+      guideVmp.style.display=vmp?'block':'none'; guideVtc.style.display=vtc?'block':'none';
       checkerTab.style.display=vmp?'block':'none';
-      vtcVerifierTab.style.display=vmp?'none':'block';
-      manualVmp.style.display=vmp?'block':'none'; manualVtc.style.display=vmp?'none':'block';
+      vtcVerifierTab.style.display=vtc?'block':'none';
+      manualVmp.style.display=vmp?'block':'none'; manualVtc.style.display=vtc?'block':'none';
+      let extraGuide=document.getElementById('guideExtra');
+      if(!extraGuide){extraGuide=document.createElement('div');extraGuide.id='guideExtra';document.getElementById('guia').appendChild(extraGuide);}
+      extraGuide.style.display=(sc||oac)?'block':'none';
+      extraGuide.innerHTML=sc?'<div class="guide-section"><h3>🛡️ Seguretat ciutadana</h3><p>Consulta de suport per a actuacions policials: identificacions, requeriments, convivència, ordre públic, armes, substàncies i danys.</p><p><strong>Criteri d’actuació:</strong> legalitat, necessitat, congruència, oportunitat i proporcionalitat. Documenta sempre els fets observats i les circumstàncies concretes.</p><p class="source-note">Eina de consulta orientativa. Cal contrastar el text consolidat, els protocols del cos i les instruccions de comandament abans d’actuar.</p></div>':'<div class="guide-section"><h3>🏛️ Oficina d’Atenció Ciutadana</h3><p>Suport a l’atenció presencial: registre d’entrada, instàncies, queixes i suggeriments, objectes perduts i sol·licituds d’informació.</p><p><strong>Criteri d’atenció:</strong> informació clara, tracte respectuós, accessibilitat, confidencialitat i derivació a la unitat competent.</p><p class="source-note">Eina de suport. Els tràmits, terminis i circuits s’han de validar amb els procediments municipals vigents.</p></div>';
+      let extraManual=document.getElementById('manualExtra');
+      if(!extraManual){extraManual=document.createElement('div');extraManual.id='manualExtra';document.getElementById('manual').appendChild(extraManual);}
+      extraManual.style.display=(sc||oac)?'block':'none';
+      extraManual.innerHTML=sc?'<div class="guide-section"><h3>📘 Manual d’ús · Seguretat Ciutadana</h3><p>Utilitza Consulta per accedir a fitxes temàtiques i Nomenclàtor per cercar referències normatives. Les fitxes no substitueixen la valoració jurídica ni els protocols operatius.</p></div>':'<div class="guide-section"><h3>📘 Manual d’ús · OAC</h3><p>Utilitza Consulta per revisar els tràmits habituals i Nomenclàtor per localitzar la normativa de procediment. Verifica sempre el circuit intern i la competència municipal.</p></div>';
       document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
       document.querySelector('.tab[data-tab="consulta"]').classList.add('active');
       document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
@@ -1599,6 +1646,8 @@
     }
     openVmp.addEventListener('click',()=>setBranch('vmp',true));
     openVtc.addEventListener('click',()=>setBranch('vtc',true));
+    openSC.addEventListener('click',()=>setBranch('sc',true));
+    openOAC.addEventListener('click',()=>setBranch('oac',true));
     homeBtn.addEventListener('click',()=>goHome(true));
 
     function renderChips(){
