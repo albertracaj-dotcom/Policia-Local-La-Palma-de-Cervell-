@@ -9,17 +9,8 @@
 <text x="300" y="125" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="800" text-anchor="middle">POLICIA LOCAL</text>
 <rect x="60" y="148" width="480" height="4" rx="2" fill="url(#gold)"/>
 <text x="300" y="195" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
-<!-- Escut policial central, amb corona i espiga -->
-<g transform="translate(300 350)" filter="url(#shadow)">
- <path d="M0-126 32-101 72-96 113-53 119-13 143 0 119 40 113 81 72 122 32 127 0 154-32 127-72 122-113 81-119 40-143 0-119-13-113-53-72-96-32-101Z" fill="url(#gold)" stroke="#050505" stroke-width="5"/>
- <circle r="101" fill="#050505"/><circle r="78" fill="#edb91b"/>
- <path d="M-45-35h90l-9 12h-72zM-39-19h78v9h-78zM-29-5h58v8h-58z" fill="#050505"/>
- <path d="M-25-35v-15h8v15m9 0v-20h8v20m9 0v-17h8v17m9 0v-13h8v13" fill="none" stroke="#050505" stroke-width="4"/>
- <text x="0" y="-62" fill="#f3c52c" font-family="Arial,sans-serif" font-size="21" font-weight="bold" text-anchor="middle">POLICIA LOCAL</text>
- <path d="M0 23 53 76 0 129-53 76Z" fill="#f1c32a" stroke="#050505" stroke-width="4"/>
- <path d="M0 116V48m0 51-19-27m19 10 18-28m-18 62-22-14m22-3 22-18m-22 48-13-10m13-8 16-12" fill="none" stroke="#23823e" stroke-width="4" stroke-linecap="round"/>
- <text x="0" y="150" fill="#f3c52c" font-family="Arial,sans-serif" font-size="13" font-weight="bold" text-anchor="middle">LA PALMA DE CERVELLÓ</text>
-</g>
+<!-- Escut oficial original aportat per l'usuari, en mida reduïda -->
+<image href="./escut-oficial.jpg" x="225" y="245" width="150" height="150" preserveAspectRatio="xMidYMid meet"/>
 <!-- Targetes -->
 <g fill="#0a2343" stroke="url(#gold)" stroke-width="5" filter="url(#shadow)">
  <rect x="24" y="520" width="264" height="150" rx="22"/><rect x="312" y="520" width="264" height="150" rx="22"/>
