@@ -1,11 +1,12 @@
 {
-  "name": "Policia Local La Palma · VMP i VTC",
-  "short_name": "VMP · VTC",
-  "lang": "ca",
-  "start_url": "./",
+  "name": "Policia Local · La Palma de Cervelló · VMP i VTC",
+  "short_name": "Policia Local",
+  "id": "./index.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#081827",
+  "background_color": "#0a1628",
   "theme_color": "#0b2742",
-  "description": "Eina de suport per a controls VMP i VTC."
+  "description": "Eina de consulta i control VMP i VTC de la Policia Local de la Palma de Cervelló.",
+  "icons": [{"src":"./policia-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
