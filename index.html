@@ -515,29 +515,6 @@
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
     body.home-mode .home-screen{display:flex;}
     body:not(.home-mode) .home-screen{display:none;}
-
-    .security-home-btn{display:flex;align-items:center;gap:13px;width:min(88%,620px);min-height:68px;margin:14px auto 0;padding:13px 17px;text-align:left;color:var(--text);background:linear-gradient(135deg,#1a3a6e 0%,#0f2744 100%);border:2px solid var(--accent);border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.32);cursor:pointer;font-family:inherit;font-size:23px}
-    .home-menu-group{width:100%;}.home-menu-group .security-home-btn{width:min(88%,620px);margin:14px auto 0}
-    .security-home-btn .menu-chevron{font-size:22px;transition:transform .2s}.security-home-btn[aria-expanded="true"] .menu-chevron{transform:rotate(180deg)}
-    .home-submenu{width:min(84%,590px);margin:8px auto 0;display:grid;gap:8px}.home-submenu[hidden]{display:none}
-    .home-sub-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;padding:10px 15px;text-align:left;color:var(--text);background:linear-gradient(145deg,#173454,#10243b);border:1px solid var(--border);border-radius:13px;font-family:inherit;font-size:21px;cursor:pointer}
-    .home-sub-btn span{flex:1}.home-sub-btn strong{display:block;color:var(--accent);font-size:13px}.home-sub-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:3px}.home-sub-btn:active{background:#204675}
-    .oac-screen{display:none;min-height:100dvh;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);padding:20px 14px 30px;color:var(--text)}
-    body.oac-mode header,body.oac-mode nav.tabs,body.oac-mode main.content,body.oac-mode .install-fixed,body.oac-mode .home-screen,body.oac-mode .security-screen{display:none!important}body.oac-mode .oac-screen{display:block}
-    .oac-wrap{width:min(760px,100%);margin:0 auto}.oac-wrap h1{font-size:20px;color:var(--accent);margin:18px 0 10px}.oac-intro{color:#c6d5e6;font-size:13px;line-height:1.55}.security-home-btn:active{transform:scale(.985);background:#204675}.security-home-icon{font-size:26px}.security-home-btn span:nth-child(2){flex:1}.security-home-btn strong{display:block;color:var(--accent);font-size:14px;letter-spacing:.5px}.security-home-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:4px}.security-home-btn b{color:var(--accent);font-size:25px}
-    .security-home-btn span{flex:1}.security-home-btn strong{display:block;color:var(--accent);font-size:14px}.security-home-btn small{display:block;color:#b8c9dc;font-size:11px;margin-top:4px}.security-home-btn b{color:var(--accent)}
-    .security-screen{display:none;min-height:100dvh;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);padding:20px 14px 30px}
-    body.security-mode header,body.security-mode nav.tabs,body.security-mode main.content,body.security-mode .install-fixed{display:none!important}
-    body.security-mode .home-screen{display:none!important}body.security-mode .security-screen{display:block}
-    .security-wrap{width:min(760px,100%);margin:0 auto}.security-wrap h1{font-size:19px;color:var(--accent);margin:18px 0 8px}.security-intro{font-size:13px;line-height:1.5;color:#c6d5e6;margin-bottom:16px}
-    .security-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-    .security-card{min-height:125px;text-align:left;padding:15px 13px;background:linear-gradient(145deg,#173454,#10243b);border:1px solid var(--border);border-radius:15px;color:var(--text);font-family:inherit;font-size:22px;cursor:pointer}
-    .security-card strong{display:block;color:var(--accent);font-size:13px;margin-top:8px}.security-card small{display:block;color:#b8c9dc;font-size:11px;line-height:1.4;margin-top:5px}
-    .security-detail{margin-top:16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:16px;color:var(--text);line-height:1.55}
-    .security-detail h2{color:var(--accent);font-size:18px;margin:12px 0}.security-detail p,.security-detail li{font-size:13px;color:#d2deeb;margin:8px 0}.security-detail ul{padding-left:20px}
-    .security-back{border:0;background:rgba(240,193,75,.12);color:var(--accent);border-radius:9px;padding:9px 12px;font-weight:700;cursor:pointer}
-    .security-disclaimer{font-size:10px;line-height:1.5;color:#94a3b8;margin-top:18px}
-    @media(max-width:420px){.security-grid{gap:9px}.security-card{min-height:132px;padding:12px 10px}}
     .home-top{display:flex;align-items:center;gap:8px;}
     .home-btn{border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:10px;padding:9px 11px;font-size:14px;font-weight:700;cursor:pointer;}
     .home-btn:hover{background:rgba(255,255,255,.22);}
@@ -817,40 +794,10 @@
     <div class="home-wrap">
       <div class="home-art">
         <img src="https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png" fetchpriority="high" decoding="async" alt="POLICIA LOCAL · VMP • VTC — Policia Local La Palma de Cervelló">
+        <button class="home-hit vmp" id="openVmp" type="button" aria-label="Obrir VMP LEGAL"></button>
+        <button class="home-hit vtc" id="openVtc" type="button" aria-label="Obrir VTC LEGAL"></button>
       </div>
-      <div class="home-menu-group">
-        <button class="security-home-btn" type="button" aria-expanded="false" aria-controls="trafficSubmenu" data-menu-toggle="trafficSubmenu"><span class="security-home-icon">🚦</span><span><strong>TRÀNSIT</strong><small>Normativa i actuacions de trànsit</small></span><b class="menu-chevron">⌄</b></button>
-        <div class="home-submenu" id="trafficSubmenu" hidden>
-          <button type="button" class="home-sub-btn" id="openVmp">🛴 <span><strong>VMP LEGAL</strong><small>Vehicles de mobilitat personal</small></span>›</button>
-          <button type="button" class="home-sub-btn" id="openVtc">🚕 <span><strong>VTC LEGAL</strong><small>Vehicles de transport amb conductor</small></span>›</button>
-        </div>
-      </div>
-      <div class="home-menu-group">
-        <button class="security-home-btn" type="button" aria-expanded="false" aria-controls="securitySubmenu" data-menu-toggle="securitySubmenu"><span class="security-home-icon">🛡️</span><span><strong>SEGURETAT CIUTADANA</strong><small>Seguretat Ciutadana · OAC</small></span><b class="menu-chevron">⌄</b></button>
-        <div class="home-submenu" id="securitySubmenu" hidden>
-          <button type="button" class="home-sub-btn" id="openSecurity">🛡️ <span><strong>SC · SEGURETAT CIUTADANA</strong><small>Obrir el mòdul de seguretat ciutadana</small></span>›</button>
-          <button type="button" class="home-sub-btn" id="openOac">🏛️ <span><strong>OAC</strong><small>Oficina d'Atenció Ciutadana</small></span>›</button>
-        </div>
-      </div>
-      <p class="home-note">Tria una àrea per desplegar-ne els mòduls.</p>
-    </div>
-  </section>
-  <section id="oacScreen" class="oac-screen"><div class="oac-wrap"><button class="home-btn" id="oacHomeBtn" type="button">⌂ Inici</button><h1>🏛️ OAC · OFICINA D'ATENCIÓ CIUTADANA</h1><p class="oac-intro">Espai de suport a l'atenció ciutadana de la Policia Local. Aquest mòdul servirà per organitzar consultes, incidències, queixes, suggeriments i tràmits d'atenció.</p><div class="security-grid"><div class="security-card">👥 <strong>Atenció ciutadana</strong><small>Recepció i orientació de consultes</small></div><div class="security-card">📝 <strong>Queixes i suggeriments</strong><small>Registre i seguiment de comunicacions</small></div><div class="security-card">🔎 <strong>Consultes i incidències</strong><small>Classificació i derivació</small></div><div class="security-card">📄 <strong>Tràmits i documentació</strong><small>Informació i suport administratiu</small></div></div></div></section>
-    <section id="securityScreen" class="security-screen">
-    <div class="security-wrap">
-      <button class="home-btn" id="securityHomeBtn" type="button">⌂ Inici</button>
-      <h1>🛡️ SEGURETAT CIUTADANA</h1>
-      <p class="security-intro">Eina de consulta operativa de la Policia Local de la Palma de Cervelló.</p>
-      <div class="security-grid">
-        <button class="security-card" data-security="normativa">⚖️ <strong>Normativa</strong><small>Lleis i articles aplicables</small></button>
-        <button class="security-card" data-security="actuacions">🚓 <strong>Actuacions policials</strong><small>Criteris i protocols d'intervenció</small></button>
-        <button class="security-card" data-security="identificacions">🪪 <strong>Identificacions i escorcolls</strong><small>Supòsits, límits i garanties</small></button>
-        <button class="security-card" data-security="lo4">📘 <strong>Llei orgànica 4/2015</strong><small>Protecció de la seguretat ciutadana</small></button>
-        <button class="security-card" data-security="delictes">🚨 <strong>Delictes i infraccions</strong><small>Consulta i primera actuació</small></button>
-        <button class="security-card" data-security="diligencies">📝 <strong>Diligències i formularis</strong><small>Suport documental</small></button>
-      </div>
-      <article class="security-detail" id="securityDetail" hidden><button id="securityBack" class="security-back" type="button">← Tots els apartats</button><h2 id="securityTitle"></h2><div id="securityText"></div></article>
-      <p class="security-disclaimer">Material de suport. Cal contrastar la normativa consolidada vigent i els protocols del cos abans de cada actuació.</p>
+      <p class="home-note">Selecciona VMP LEGAL o VTC LEGAL. Toca el botó corresponent.</p>
     </div>
   </section>
 
@@ -1650,30 +1597,6 @@
       if(push&&!restoringNavigation) navPush(navState('home',null,null,null));
       window.scrollTo(0,0);
     }
-
-    const securityPages = {
-      normativa: ["Normativa", "Consulta de les normes que emmarquen l'actuació policial.", ["Llei orgànica 4/2015, de protecció de la seguretat ciutadana","Llei orgànica 10/1995, del Codi penal","Llei d'enjudiciament criminal","Llei orgànica 2/1986, de forces i cossos de seguretat"]],
-      actuacions: ["Actuacions policials", "Guies de suport per preparar i documentar intervencions.", ["Valoració inicial del risc i protecció de les persones","Identificació de persones intervinents i testimonis","Preservació del lloc dels fets i de les evidències","Comunicació amb serveis d'emergència","Documentació cronològica i objectiva"]],
-      identificacions: ["Identificacions i escorcolls", "Supòsits legals, finalitats, límits i garanties.", ["Motivació i finalitat legal de la intervenció","Proporcionalitat i no-discriminació","Informació a la persona afectada","Respecte als límits i garanties legals"]],
-      lo4: ["Llei orgànica 4/2015", "Àrea específica de consulta de la Llei orgànica 4/2015, de 30 de març.", ["Identificació de persones","Controls i comprovacions","Registres corporals externs","Infraccions i règim sancionador","Actes i mesures provisionals"]],
-      delictes: ["Delictes i infraccions", "Fitxes de consulta per orientar la primera actuació.", ["Delictes contra les persones i el patrimoni","Violència en l'àmbit familiar i de gènere","Desordres, amenaces i coaccions","Armes, drogues i objectes perillosos","Infraccions administratives de seguretat ciutadana"]],
-      diligencies: ["Diligències i formularis", "Espai per incorporar models normalitzats del cos.", ["Acta d'identificació","Acta de registre corporal extern","Acta d'intervenció d'objectes","Full de dades de testimonis","Relació d'evidències i cadena de custòdia"]]
-    };
-    function showSecurityHome(){document.body.classList.remove('home-mode');document.body.classList.add('security-mode');document.getElementById('securityDetail').hidden=true;document.querySelector('.security-grid').style.display='grid';window.scrollTo(0,0);}
-    document.querySelectorAll('[data-menu-toggle]').forEach(btn=>btn.addEventListener('click',()=>{const panel=document.getElementById(btn.dataset.menuToggle);const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));panel.hidden=expanded;}));
-    document.getElementById('openSecurity').addEventListener('click',showSecurityHome);
-    document.getElementById('openOac').addEventListener('click',()=>{document.body.classList.remove('home-mode','security-mode');document.body.classList.add('oac-mode');window.scrollTo(0,0);});
-    document.getElementById('oacHomeBtn').addEventListener('click',()=>{document.body.classList.remove('oac-mode');goHome(true);});
-    document.getElementById('securityHomeBtn').addEventListener('click',()=>{document.body.classList.remove('security-mode');goHome(true);});
-    document.getElementById('securityBack').addEventListener('click',()=>{document.getElementById('securityDetail').hidden=true;document.querySelector('.security-grid').style.display='grid';});
-    document.querySelectorAll('.security-card').forEach(card=>card.addEventListener('click',()=>{
-      const item=securityPages[card.dataset.security];if(!item)return;
-      document.getElementById('securityTitle').textContent=item[0];
-      const body=document.getElementById('securityText');body.replaceChildren();
-      const p=document.createElement('p');p.textContent=item[1];body.appendChild(p);
-      const ul=document.createElement('ul');item[2].forEach(line=>{const li=document.createElement('li');li.textContent=line;ul.appendChild(li);});body.appendChild(ul);
-      document.querySelector('.security-grid').style.display='none';document.getElementById('securityDetail').hidden=false;window.scrollTo(0,0);
-    }));
     openVmp.addEventListener('click',()=>setBranch('vmp',true));
     openVtc.addEventListener('click',()=>setBranch('vtc',true));
     homeBtn.addEventListener('click',()=>goHome(true));
