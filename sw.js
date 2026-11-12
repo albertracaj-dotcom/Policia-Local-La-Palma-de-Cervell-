@@ -1,4 +1,4 @@
-const CACHE = 'policia-vmp-vtc-v16';
+const CACHE = 'policia-vmp-vtc-v17';
 const ASSETS = [
   './', './index.html', './manifest.json', 'https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/icon-192.png',
   'https://raw.githubusercontent.com/CathalMcDonegal/VMP-LEGAL/main/home-splash.png',
