@@ -501,9 +501,9 @@
     .install-card .install-help{display:none;text-align:left;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);border-radius:12px;padding:10px 12px;margin:12px 0 0;color:#c5d9f0;font-size:.76rem;line-height:1.45;}
     .install-card .install-help.show{display:block;}
     .home-screen{min-height:100dvh;display:flex;align-items:flex-start;justify-content:center;padding:0 0 26px;box-sizing:border-box;overflow-y:auto;background:linear-gradient(180deg,#061b32 0%,#0b2742 100%);}
-    .home-wrap{width:min(760px,100%);text-align:center;position:relative;}
-    .home-art{position:relative;width:100%;aspect-ratio:2 / 3;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.38);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
-    .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
+    .home-wrap{width:100%;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;}
+    .home-art{position:relative;width:min(100%,520px,calc((100dvh - 18px) * 2 / 3));aspect-ratio:2 / 3;flex:0 0 auto;border-radius:22px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.34);border:1px solid rgba(240,193,75,.28);background:#0b2742;}
+    .home-art img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;}
     .home-hit{position:absolute;border:0;background:transparent;cursor:pointer;z-index:3;border-radius:28px;}
     .home-hit:focus-visible{outline:3px solid #fff;outline-offset:3px;}
     .home-hit.vmp{left:4.7%;top:58.3%;width:43.3%;height:16.1%;}
@@ -516,7 +516,7 @@
     .home-card-icon{font-size:clamp(15px,4vw,25px);line-height:1.1;}
     .home-card-title{font-size:clamp(10px,2.8vw,16px);font-weight:900;letter-spacing:.7px;color:#f5cf68;text-shadow:0 1px 2px #06182a;}
     .home-card-subtitle{font-size:clamp(7px,1.8vw,10px);font-weight:800;letter-spacing:.35px;color:#fff;}
-    .home-note{margin-top:10px;font-size:11px;color:rgba(232,238,247,.72);}
+    .home-note{margin:8px 0 0;font-size:11px;color:rgba(232,238,247,.72);}
     .home-screen .install-fixed{display:none;}
     body.home-mode header, body.home-mode nav.tabs, body.home-mode main.content{display:none;}
     body.home-mode .home-screen{display:flex;}
@@ -531,9 +531,9 @@
     .vtc-official-link:active,.vtc-official-link:focus{color:#ffe27a!important;}
     .warning-note{background:#fff7e8;border:1px solid #f0d7a2;border-radius:14px;padding:12px 14px;color:#715b2a;font-size:13px;line-height:1.45;margin-bottom:14px;}
     @media (max-width:640px){
-      .home-screen{padding:0 0 12px;}
+      .home-screen{padding:8px 0 12px;}
       .home-wrap{width:100%;}
-      .home-art{border-radius:0;border-left:0;border-right:0;}
+      .home-art{width:min(100%,calc((100dvh - 30px) * 2 / 3));border-radius:16px;}
       .home-note{padding:0 12px;}
     }
 
