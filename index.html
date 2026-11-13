@@ -1677,6 +1677,7 @@
       document.querySelectorAll('.sc-only-tab').forEach(t=>t.style.display=sc?'block':'none');
       document.querySelectorAll('.oac-only-tab').forEach(t=>t.style.display=oac?'block':'none');
       document.querySelectorAll('.tab:not(.sc-only-tab):not(.oac-only-tab)').forEach(t=>t.style.display=(sc||oac)?'none':'block');
+      const consultaTab=document.querySelector('.tab[data-tab="consulta"]'); if(consultaTab){consultaTab.style.display=(vmp||vtc||sc)?'block':'none';consultaTab.textContent=sc?'Denúncies':'Denúncies';}
       const names={vmp:'VMP LEGAL',vtc:'VTC LEGAL',sc:'SEGURETAT CIUTADANA',oac:'OAC'};
       const subtitles={vmp:'Normativa · Denúncies · Verificador · Guia · En vigor 1/10/2026',vtc:'Normativa · Denúncies · Comprovar VTC · Guia · Catalunya / AMB',sc:'Consulta operativa · Seguretat ciutadana · Normativa',oac:'Atenció ciutadana · Tràmits · Procediment administratiu'};
       appTitle.textContent=names[branch]||names.vmp;
@@ -1700,7 +1701,7 @@
       document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
       document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-      if(sc){document.querySelector('.tab[data-tab="sc-pnt"]').classList.add('active');document.getElementById('sc-pnt').classList.add('active');loadSCDocuments();}
+      if(sc){const t=document.querySelector('.tab[data-tab="consulta"]');t.classList.add('active');document.getElementById('consulta').classList.add('active');loadSCDocuments();}
       else if(oac){document.querySelector('.tab[data-tab="oac-alcohol"]').classList.add('active');document.getElementById('oac-alcohol').classList.add('active');}
       else{document.querySelector('.tab[data-tab="consulta"]').classList.add('active');document.getElementById('consulta').classList.add('active');}
       listView.classList.add('active'); detailView.classList.remove('active');
